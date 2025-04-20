@@ -6,13 +6,14 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center py-6 px-8">
       <div className="flex items-center gap-2">
-        <img 
-          src="/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
-          alt="Securing the Singularity Logo" 
-          className="h-20" 
-          style={{ maxHeight: "80px", width: "auto" }}
-          loading="eager"
-        />
+        <div className="h-20 w-auto">
+          <img 
+            src="/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
+            alt="Securing the Singularity Logo" 
+            className="h-full w-auto"
+            loading="eager"
+          />
+        </div>
       </div>
       <nav className="hidden md:flex items-center gap-8">
         <a href="#services" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Services</a>
