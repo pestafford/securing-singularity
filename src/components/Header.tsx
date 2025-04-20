@@ -9,7 +9,7 @@ const Header = () => {
         <img 
           src="/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
           alt="Securing the Singularity Logo" 
-          className="h-12"
+          className="h-20" // Increased from h-12 to h-20
         />
       </div>
       <nav className="hidden md:flex items-center gap-8">

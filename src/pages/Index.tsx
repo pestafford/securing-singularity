@@ -1,8 +1,8 @@
-
 import { Shield, Lock, ChartLine, TrendingUp, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
+import TeamMember from "@/components/TeamMember";
 
 const Index = () => {
   return (
@@ -67,6 +67,18 @@ const Index = () => {
                 Specialized consulting for AI systems security, ensuring safe and reliable artificial intelligence.
               </p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 px-8 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">
+            Meet Our Leadership
+          </h2>
+          <div className="flex justify-center">
+            <TeamMember />
           </div>
         </div>
       </section>
