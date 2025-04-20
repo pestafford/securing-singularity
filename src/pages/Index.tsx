@@ -1,3 +1,4 @@
+
 import { Shield, Lock, ChartLine, TrendingUp, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -5,6 +6,11 @@ import Header from "@/components/Header";
 import TeamMember from "@/components/TeamMember";
 
 const Index = () => {
+  // For GitHub Pages, we need to ensure the image paths are relative to the base URL
+  const logoPath = process.env.NODE_ENV === 'production' 
+    ? "lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
+    : "/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png";
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -142,7 +148,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
+              src={logoPath}
               alt="Securing the Singularity Logo" 
               className="h-12 mb-4 brightness-200"
             />

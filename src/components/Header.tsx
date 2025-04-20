@@ -3,12 +3,17 @@ import { Shield, Lock, ChartLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
+  // For GitHub Pages, we need to ensure the image paths are relative to the base URL
+  const logoPath = process.env.NODE_ENV === 'production' 
+    ? "lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
+    : "/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png";
+
   return (
     <header className="flex justify-between items-center py-6 px-8">
       <div className="flex items-center gap-2">
         <div className="h-20 w-auto">
           <img 
-            src="/lovable-uploads/4a152f32-ee27-4680-b298-515454c750b8.png" 
+            src={logoPath}
             alt="Securing the Singularity Logo" 
             className="h-full w-auto"
             loading="eager"
