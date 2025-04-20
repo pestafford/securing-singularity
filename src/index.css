@@ -46,9 +46,33 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+  body {
+    display: block !important;
+  }
+  
+  img {
+    image-rendering: -moz-crisp-edges;
+  }
+  
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
 }
