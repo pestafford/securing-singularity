@@ -1,21 +1,16 @@
-import { Shield, Lock, ChartLine, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Shield, Lock, LineChart } from "lucide-react";
 
 const LandingPage = () => {
   // Simple banner for the company logo area
   const Banner = () => (
-    <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8" style={{ background: '#e9ecef' }}>
+    <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8 bg-[#e9ecef] shadow-sm">
       <div className="flex items-center gap-2">
         <img
           src="/lovable-uploads/LogoStylizedSmall.png"
           alt="Singularity Solutions Logo"
           style={{ display: 'block' }}
         />
-        <h1
-          className="text-xl md:text-2xl font-bold text-[#1EAEDB] tracking-wide"
-          style={{ fontFamily: 'Orbitron, Segoe UI, Arial, sans-serif', fontWeight: 700, letterSpacing: '0.04em', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', fontVariant: 'normal', fontStyle: 'normal', textTransform: 'none', lineHeight: 1.2, fontFeatureSettings: '"liga" 1', fontDisplay: 'swap', fontFamilyImportant: 'Orbitron, Segoe UI, Arial, sans-serif !important' }}
-        >
+        <h1 className="text-xl md:text-2xl font-bold text-[#1EAEDB] font-orbitron tracking-wide">
           Singularity Solutions
         </h1>
       </div>
@@ -23,16 +18,16 @@ const LandingPage = () => {
         <a href="#services" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Services</a>
         <a href="#about" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">About</a>
         <a href="#contact" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Contact</a>
-        <Button variant="default" className="bg-[#1EAEDB] hover:bg-[#1795BD]">
+        <button className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-4 py-2 rounded-md transition-colors">
           Get Started
-        </Button>
+        </button>
       </nav>
     </header>
   );
 
   // Simple team member card
-  const TeamMemberSimple = () => (
-    <Card className="p-5 md:p-6 hover:shadow-lg transition-shadow max-w-xs md:max-w-sm mx-auto bg-white/90 border border-gray-100">
+  const TeamMemberCard = () => (
+    <div className="p-5 md:p-6 hover:shadow-lg transition-shadow max-w-xs md:max-w-sm mx-auto bg-white/90 rounded-lg border border-gray-100">
       <div className="flex flex-col items-center">
         <img
           src="/lovable-uploads/BlueShirt.PNG"
@@ -49,22 +44,19 @@ const LandingPage = () => {
           Phil Stafford is a cybersecurity expert with over 15 years of experience helping organizations secure their digital assets and navigate complex technology risks. He specializes in AI security, governance, and risk management, and is passionate about empowering businesses to thrive safely in the age of artificial intelligence.
         </p>
       </div>
-    </Card>
+    </div>
   );
 
   return (
-    <div className="min-h-screen relative" style={{ background: '#000' }}>
-      {/* Background image with opacity overlay */}
+    <div className="min-h-screen bg-black relative">
       <div
         aria-hidden="true"
-        className="pointer-events-none select-none fixed inset-0 z-0"
+        className="pointer-events-none select-none absolute inset-0 z-0 opacity-60"
         style={{
           backgroundImage: "url('/lovable-uploads/Singularity Poster.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.55,
-          mixBlendMode: 'lighten',
         }}
       />
       <div className="relative z-10">
@@ -82,12 +74,12 @@ const LandingPage = () => {
                   We provide fractional CISO services, GRC solutions, and AI security consulting.
                 </p>
                 <div className="flex gap-4">
-                  <Button size="lg" className="bg-[#1EAEDB] hover:bg-[#1795BD]">
+                  <button className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-6 py-3 rounded-md text-lg font-semibold transition-colors">
                     Schedule Consultation
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                  </button>
+                  <button className="border-2 border-white hover:bg-white/10 text-white px-6 py-3 rounded-md text-lg font-semibold transition-colors">
                     Learn More
-                  </Button>
+                  </button>
                 </div>
               </div>
               <div className="flex justify-end md:pr-8 lg:pr-16">
@@ -104,39 +96,39 @@ const LandingPage = () => {
               Our Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="p-6 hover:shadow-lg transition-shadow rounded-lg border border-gray-100">
                 <Lock className="w-12 h-12 text-[#1EAEDB] mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Fractional CISO</h3>
                 <p className="text-gray-600">
                   Expert security leadership without the full-time commitment.
                 </p>
-              </Card>
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <ChartLine className="w-12 h-12 text-[#1EAEDB] mb-4" />
+              </div>
+              <div className="p-6 hover:shadow-lg transition-shadow rounded-lg border border-gray-100">
+                <LineChart className="w-12 h-12 text-[#1EAEDB] mb-4" />
                 <h3 className="text-xl font-semibold mb-3">GRC Solutions</h3>
                 <p className="text-gray-600">
                   Comprehensive governance, risk management, and compliance services.
                 </p>
-              </Card>
-              <Card className="p-6 hover:shadow-lg transition-shadow">
+              </div>
+              <div className="p-6 hover:shadow-lg transition-shadow rounded-lg border border-gray-100">
                 <Shield className="w-12 h-12 text-[#1EAEDB] mb-4" />
                 <h3 className="text-xl font-semibold mb-3">AI Security</h3>
                 <p className="text-gray-600">
                   Specialized consulting for AI systems security and ethics.
                 </p>
-              </Card>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Team Section - Simplified */}
+        {/* Team Section */}
         <section id="about" className="py-14 md:py-20 px-4 md:px-8 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">
               Meet Our Leadership
             </h2>
             <div className="flex justify-center">
-              <TeamMemberSimple />
+              <TeamMemberCard />
             </div>
           </div>
         </section>
@@ -150,9 +142,9 @@ const LandingPage = () => {
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
               Let's discuss how we can help protect your business in the age of AI.
             </p>
-            <Button size="lg" className="bg-[#1EAEDB] hover:bg-[#1795BD]">
+            <button className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-6 py-3 rounded-md text-lg font-semibold transition-colors">
               Contact Us Today
-            </Button>
+            </button>
           </div>
         </section>
 
