@@ -24,12 +24,18 @@ const LandingPage = () => {
   const TeamMemberSimple = () => (
     <Card className="p-6 hover:shadow-lg transition-shadow max-w-sm mx-auto">
       <div className="flex flex-col items-center">
-        <div className="w-24 h-24 rounded-full bg-gray-300 mb-4 flex items-center justify-center">
-          <Shield className="w-12 h-12 text-[#1EAEDB]" />
-        </div>
-        <h3 className="text-xl font-semibold mb-2">Dr. John Smith</h3>
-        <p className="text-gray-600">
-          Chief Security Officer & AI Ethics Consultant
+        <img
+          src="/lovable-uploads/BlueShirt.png"
+          alt="Phil Stafford"
+          className="w-24 h-24 rounded-full mb-4 object-cover border-4 border-white shadow bg-gray-200"
+          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+        />
+        <h3 className="text-xl font-semibold mb-2">Phil Stafford</h3>
+        <p className="text-gray-600 mb-4">
+          Founder & Principal Consultant
+        </p>
+        <p className="text-gray-500 text-center text-base">
+          Phil Stafford is a cybersecurity expert with over 15 years of experience helping organizations secure their digital assets and navigate complex technology risks. He specializes in AI security, governance, and risk management, and is passionate about empowering businesses to thrive safely in the age of artificial intelligence.
         </p>
       </div>
     </Card>
