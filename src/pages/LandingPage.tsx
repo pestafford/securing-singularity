@@ -5,11 +5,17 @@ import { Card } from "@/components/ui/card";
 const LandingPage = () => {
   // Simple banner for the company logo area
   const Banner = () => (
-    <header className="flex justify-between items-center py-6 px-8 bg-white shadow-sm">
+    <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8 bg-white shadow-sm">
       <div className="flex items-center gap-2">
-        <h1 className="text-2xl font-bold text-[#1EAEDB]">Singularity Solutions</h1>
+        <img
+          src="/lovable-uploads/LogoStylizedSmall.png"
+          alt="Singularity Solutions Logo"
+          className="h-10 w-10 md:h-12 md:w-12 mr-2 md:mr-3 drop-shadow-md bg-white/90 rounded-full p-1.5 border border-gray-100 shadow-sm object-contain"
+          style={{ maxHeight: '48px', background: 'rgba(255,255,255,0.92)' }}
+        />
+        <h1 className="text-xl md:text-2xl font-bold text-[#1EAEDB]">Singularity Solutions</h1>
       </div>
-      <nav className="hidden md:flex items-center gap-8">
+      <nav className="hidden md:flex items-center gap-6 md:gap-8">
         <a href="#services" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Services</a>
         <a href="#about" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">About</a>
         <a href="#contact" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Contact</a>
@@ -22,16 +28,17 @@ const LandingPage = () => {
 
   // Simple team member card
   const TeamMemberSimple = () => (
-    <Card className="p-6 hover:shadow-lg transition-shadow max-w-sm mx-auto">
+    <Card className="p-5 md:p-6 hover:shadow-lg transition-shadow max-w-xs md:max-w-sm mx-auto bg-white/90 border border-gray-100">
       <div className="flex flex-col items-center">
         <img
-          src="/lovable-uploads/BlueShirt.png"
+          src="/lovable-uploads/BlueShirt.PNG"
           alt="Phil Stafford"
-          className="w-24 h-24 rounded-full mb-4 object-cover border-4 border-white shadow bg-gray-200"
+          className="w-40 h-40 md:w-56 md:h-56 rounded-full mb-4 object-cover border-2 border-gray-100 shadow bg-gray-100/80"
+          style={{ objectPosition: 'top', boxShadow: '0 2px 12px 0 rgba(30,174,219,0.08)' }}
           onError={(e) => { e.currentTarget.style.display = 'none'; }}
         />
-        <h3 className="text-xl font-semibold mb-2">Phil Stafford</h3>
-        <p className="text-gray-600 mb-4">
+        <h3 className="text-lg md:text-xl font-semibold mb-2">Phil Stafford</h3>
+        <p className="text-gray-600 mb-3 md:mb-4">
           Founder & Principal Consultant
         </p>
         <p className="text-gray-500 text-center text-base">
@@ -42,11 +49,20 @@ const LandingPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div
+      className="min-h-screen bg-white"
+      style={{
+        backgroundImage: "url('/lovable-uploads/Singularity Poster.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <Banner />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-8">
+      <section className="relative py-14 md:py-20 px-4 md:px-8">
         <div className="absolute inset-0 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] -z-10" />
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -75,7 +91,7 @@ const LandingPage = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-8 bg-white">
+      <section id="services" className="py-14 md:py-20 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">
             Our Services
@@ -107,7 +123,7 @@ const LandingPage = () => {
       </section>
 
       {/* Team Section - Simplified */}
-      <section id="about" className="py-20 px-8 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+      <section id="about" className="py-14 md:py-20 px-4 md:px-8 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">
             Meet Our Leadership
@@ -119,7 +135,7 @@ const LandingPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-8 bg-white">
+      <section id="contact" className="py-14 md:py-20 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 text-gray-900">
             Ready to Secure Your Future?
@@ -134,7 +150,7 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-8">
+      <footer className="bg-gray-900 text-white py-10 md:py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">Singularity Solutions</h2>
