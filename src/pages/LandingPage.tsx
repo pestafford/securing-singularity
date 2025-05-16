@@ -1,4 +1,3 @@
-
 import { Shield, Lock, ChartLine, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,7 +7,7 @@ const LandingPage = () => {
   const Banner = () => (
     <header className="flex justify-between items-center py-6 px-8 bg-white shadow-sm">
       <div className="flex items-center gap-2">
-        <h1 className="text-2xl font-bold text-[#1EAEDB]">Securing the Singularity</h1>
+        <h1 className="text-2xl font-bold text-[#1EAEDB]">Singularity Solutions</h1>
       </div>
       <nav className="hidden md:flex items-center gap-8">
         <a href="#services" className="text-gray-700 hover:text-[#1EAEDB] transition-colors">Services</a>
@@ -132,14 +131,14 @@ const LandingPage = () => {
       <footer className="bg-gray-900 text-white py-12 px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Securing the Singularity</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Singularity Solutions</h2>
             <p className="text-gray-400">
               Securing the future of technology, one business at a time.
             </p>
           </div>
           <div className="md:text-right">
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-gray-400">contact@securingthesingularity.com</p>
+            <p className="text-gray-400">contact@singularitysolutions.com</p>
           </div>
         </div>
       </footer>
