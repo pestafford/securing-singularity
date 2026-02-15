@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+	darkMode: 'class',
 	content: [
 		"./src/**/*.{ts,tsx}",
 	],
@@ -31,6 +32,19 @@ export default {
 					secondary: '#B0B0B0',
 					muted: '#808080',
 				},
+				surface: {
+					DEFAULT: 'var(--color-bg)',
+					card: 'var(--color-bg-card)',
+					subtle: 'var(--color-bg-subtle)',
+					elevated: 'var(--color-bg-elevated)',
+				},
+				border: {
+					theme: 'var(--color-border)',
+					'theme-hover': 'var(--color-border-hover)',
+				},
+				heading: 'var(--color-text-primary)',
+				body: 'var(--color-text-secondary)',
+				muted: 'var(--color-text-muted)',
 			},
 			fontFamily: {
 				mono: [

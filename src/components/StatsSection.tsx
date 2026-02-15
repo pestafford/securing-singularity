@@ -11,10 +11,10 @@ const StatItem = ({ number, label, icon }: StatItemProps) => (
     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-accent-teal flex items-center justify-center text-white group-hover:scale-110 transition-transform">
       {icon}
     </div>
-    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent-teal bg-clip-text text-transparent mb-2">
+    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent-teal bg-clip-text text-transparent mb-2">
       {number}
     </div>
-    <div className="text-[#B0B0B0] font-medium">{label}</div>
+    <div className="text-body font-medium">{label}</div>
   </div>
 );
 
@@ -41,12 +41,12 @@ const StatsSection = () => {
   const { title, subtitle, items } = siteContent.stats;
 
   return (
-    <section className="py-16 md:py-24 px-2 md:px-6 bg-[#1A1A1A]">
+    <section className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-center mb-4 text-[#F5F5F5] tracking-tight">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold text-center mb-4 text-heading tracking-tight">
           {title}
         </h2>
-        <p className="text-center text-[#B0B0B0] mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-body mb-10 max-w-2xl mx-auto">
           {subtitle}
         </p>
 
