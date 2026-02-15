@@ -8,13 +8,14 @@ export const siteContent = {
     tagline: "AI Security Architecture & Consulting",
     email: "contact@securingthesingularity.com",
     description: "AI security architecture, tooling, and strategy — built by practitioners who build the tools.",
+    bookingUrl: "https://calendly.com/phil-securingthesingularity/30min",
   },
 
   // Hero Section
   hero: {
     title: "AI Security Architecture & Consulting",
     subtitle: "We design secure AI systems, build security tooling, and help organizations deploy AI safely — grounded in hands-on experience building platforms like ThinkTank and Credence.",
-    ctaPrimary: "Schedule Consultation",
+    ctaPrimary: "Book Free Assessment",
     ctaSecondary: "Learn More",
   },
 
@@ -26,8 +27,8 @@ export const siteContent = {
 
   // News Banner
   newsBanner: {
-    text: "See our latest announcement:",
-    highlight: "MLOps Conference: Agents in Production",
+    text: "Watch our latest talk:",
+    highlight: "MLOps Conference — Agents in Production",
     link: "#news",
   },
 
@@ -57,7 +58,7 @@ export const siteContent = {
         icon: "Brain",
         description: [
           "Security analysis for autonomous agents",
-          "MCP server verification & trust scoring",
+          "MCP server verification & trust scoring via Credence",
           "Agent trust frameworks",
         ],
       },
@@ -71,8 +72,7 @@ export const siteContent = {
         ],
       },
     ],
-    ctaPrimary: "Schedule Consultation",
-    ctaSecondary: "Meet the Team",
+    ctaPrimary: "Book Free Assessment",
   },
 
   // Stats Section
@@ -82,7 +82,7 @@ export const siteContent = {
     items: [
       { number: "15+", label: "Years in Cybersecurity" },
       { number: "60+", label: "Repositories Analyzed" },
-      { number: "26", label: "MCP Servers Assessed" },
+      { number: "26", label: "MCP Servers Assessed via Credence" },
       { number: "14+", label: "Vulnerabilities Discovered" },
     ],
   },
@@ -91,7 +91,7 @@ export const siteContent = {
   team: {
     title: "Meet Our Leadership",
     subtitle: "AI security architecture backed by 15+ years in cybersecurity",
-    cta: "Contact Us",
+    cta: "Book a Conversation",
     members: [
       {
         name: "Phil Stafford",
@@ -102,6 +102,7 @@ export const siteContent = {
           linkedin: "http://www.linkedin.com/in/phillipstafford",
           github: "https://github.com/pestafford",
           medium: "https://medium.com/@pe.stafford",
+          youtube: "https://www.youtube.com/@SecuringTheSingularity/",
         },
       },
     ],
@@ -133,48 +134,38 @@ export const siteContent = {
         description: "Real vulnerabilities found, real tools deployed — not theoretical frameworks",
       },
     ],
-    cta: "Get Started",
+    cta: "Book Free Assessment",
   },
 
-  // Blog Section
-  blog: {
-    title: "Latest Insights",
-    subtitle: "Thought leadership on AI, cybersecurity, and digital transformation",
-    posts: [
+  // Featured At Section
+  featuredAt: {
+    title: "Featured At",
+    items: [
       {
-        title: "You Didn't Sell Out — You Bought In",
-        image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*h5ThH_7ZbpKp8C-tIJ7W2Q.jpeg",
-        link: "https://medium.com/@pe.stafford/you-didnt-sell-out-you-showed-up-f0bdd7b83132",
+        name: "MLOps Community",
+        image: "https://unita.co/wp-content/uploads/2022/06/mlops-community-logo.jpg",
+        link: "https://home.mlops.community/home/videos/when-ai-agents-argue-structured-dissent-patterns-for-production-reliability-phil-stafford-2025-11-27",
       },
       {
-        title: "You're Not Scared of AI, You're Scared of Losing Yourself",
-        image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*vRE7IyeQeqQXFlm0rO2U8Q.jpeg",
-        link: "https://medium.com/@pe.stafford/youre-not-scared-of-ai-youre-scared-of-losing-yourself-abcdef123456",
-      },
-      {
-        title: "This Isn't a Story About Failure — It's About Staying in the Fight",
-        image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yHJgArT6XwaZROu-y8P74w.jpeg",
-        link: "https://medium.com/@pe.stafford/this-isnt-a-story-about-failure-its-about-staying-in-the-fight-9876543210ba",
+        name: "CyberLab Con 2025",
+        image: "https://static.wixstatic.com/media/91d0ba_616a18678ec84102a18c1b25ef81dcc4~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cyber%20Lab%20Con%20idea%203%20(1).png",
+        link: "https://www.cyberspeaklabs.com/cyberlab-con-2025-about",
       },
     ],
-    ctaPrimary: "View All Posts",
-    ctaPrimaryLink: "http://medium.com/@pe.stafford/",
-    ctaSecondary: "Explore Services",
   },
 
   // News Section
   news: {
     title: "News & Announcements",
-    subtitle: "Stay updated on our latest activities and industry events",
+    subtitle: "Past speaking engagements and industry events",
     items: [
       {
         title: "MLOps Conference: Agents in Production",
         image: "https://unita.co/wp-content/uploads/2022/06/mlops-community-logo.jpg",
-        description: "Phil Stafford will be speaking at the MLOps Conference on November 18, 2025, discussing 'Agents in Production' and the security implications of deploying autonomous AI agents in real-world applications.",
+        description: "Phil Stafford spoke at the MLOps Conference on November 18, 2025, presenting 'When AI Agents Argue: Structured Dissent Patterns for Production Reliability' — covering security implications of deploying autonomous AI agents in real-world applications.",
         details: [
-          { label: "Date", value: "November 18, 2025, 10:50 AM PST" },
-          { label: "Location", value: "Online (Zoom livestream)" },
-          { label: "Admission", value: "Free with RSVP" },
+          { label: "Date", value: "November 18, 2025" },
+          { label: "Format", value: "Online (Zoom livestream)" },
         ],
         links: {
           recording: "https://home.mlops.community/home/videos/when-ai-agents-argue-structured-dissent-patterns-for-production-reliability-phil-stafford-2025-11-27",
@@ -183,15 +174,13 @@ export const siteContent = {
       {
         title: "CyberLab Con 2025",
         image: "https://static.wixstatic.com/media/91d0ba_616a18678ec84102a18c1b25ef81dcc4~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cyber%20Lab%20Con%20idea%203%20(1).png",
-        description: "Phil Stafford will be speaking at CyberLab Con 2025, a free online conference hosted by CyberSpeak Labs in partnership with the Missouri Cyber Center of Excellence (MCCOE).",
+        description: "Phil Stafford spoke at CyberLab Con 2025, a free online conference hosted by CyberSpeak Labs in partnership with the Missouri Cyber Center of Excellence (MCCOE).",
         details: [
-          { label: "Date", value: "July 17, 2025, 8:00 AM – 5:00 PM CDT" },
-          { label: "Location", value: "Online (YouTube livestream)" },
-          { label: "Admission", value: "Free with RSVP" },
+          { label: "Date", value: "July 17, 2025" },
+          { label: "Format", value: "Online (YouTube livestream)" },
         ],
         links: {
           about: "https://www.cyberspeaklabs.com/cyberlab-con-2025-about",
-          register: "https://www.cyberspeaklabs.com/event-details/cyberlab-con-2025",
         },
       },
     ],
@@ -200,8 +189,8 @@ export const siteContent = {
   // Contact Section
   contact: {
     title: "Ready to Secure Your AI Systems?",
-    subtitle: "Let's discuss how we can help you deploy AI securely — from architecture to strategy.",
-    cta: "Contact Us Today",
+    subtitle: "Book a free 30-minute assessment to discuss your AI security needs — from architecture review to deployment strategy.",
+    cta: "Book Free Assessment",
     email: "contact@securingthesingularity.com",
   },
 
@@ -212,7 +201,6 @@ export const siteContent = {
       { text: "Services", href: "#services" },
       { text: "About", href: "#about" },
       { text: "Contact", href: "#contact" },
-      { text: "Mission", href: "#mission" },
     ],
   },
 };

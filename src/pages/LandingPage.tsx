@@ -1,4 +1,4 @@
-import { Shield, Lock, LineChart, Brain, Star, BookOpen, AlertCircle, Award, CheckCircle2, Menu, X } from "lucide-react";
+import { Shield, Lock, LineChart, Brain, BookOpen, AlertCircle, Award, CheckCircle2, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import BackgroundPattern from "../components/BackgroundPattern";
 import StatsSection from "../components/StatsSection";
@@ -31,6 +31,8 @@ const LandingPage = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const bookingUrl = siteContent.company.bookingUrl;
+
   // Simple banner for the company logo area
   const Banner = () => (
     <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8 bg-surface border-b border-border-theme">
@@ -53,7 +55,7 @@ const LandingPage = () => {
         <a href="#about" className="text-body hover:text-[#1EAEDB] transition-colors font-mono text-sm tracking-wide">About</a>
         <a href="#contact" className="text-body hover:text-[#1EAEDB] transition-colors font-mono text-sm tracking-wide">Contact</a>
         <ThemeToggle />
-        <a href="#contact" className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-4 py-2 rounded-md transition-colors font-mono text-sm">Get Started</a>
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-4 py-2 rounded-md transition-colors font-mono text-sm">Book Free Assessment</a>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -108,11 +110,13 @@ const LandingPage = () => {
                 Contact
               </a>
               <a
-                href="#contact"
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#1EAEDB] hover:bg-[#1795BD] text-white px-4 py-3 rounded-md transition-colors text-center text-lg font-semibold mt-4 font-mono"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Started
+                Book Free Assessment
               </a>
             </div>
           </nav>
@@ -149,6 +153,9 @@ const LandingPage = () => {
             <a href={member.social.medium} target="_blank" rel="noopener noreferrer" aria-label="Medium" className="hover:text-[#1EAEDB] text-body transition-colors">
               <svg width="28" height="28" fill="currentColor" viewBox="0 0 1043.63 592.71"><g><path d="M588.67 296.14c0 163.57-131.93 296.14-294.33 296.14S0 459.71 0 296.14 131.93 0 294.34 0s294.33 132.57 294.33 296.14zM853.03 296.14c0 151.31-65.98 273.99-147.36 273.99-81.38 0-147.36-122.68-147.36-273.99S624.29 22.15 705.67 22.15c81.38 0 147.36 122.68 147.36 273.99zM1043.63 296.14c0 140.13-29.13 253.77-65.07 253.77-35.94 0-65.07-113.64-65.07-253.77s29.13-253.77 65.07-253.77c35.94 0 65.07 113.64 65.07 253.77z"/></g></svg>
             </a>
+            <a href={member.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-[#1EAEDB] text-body transition-colors">
+              <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
           </div>
           <p className="text-muted text-center text-base">
             {member.bio}
@@ -158,71 +165,22 @@ const LandingPage = () => {
     );
   };
 
-  // Client testimonial card component
-  const TestimonialCard = ({ quote, author, company }: { quote: string; author: string; company: string }) => (
-    <div className="p-6 bg-surface-card rounded-lg shadow-lg hover:shadow-xl transition-all border border-border-theme">
-      <div className="mb-4">
-        <Star className="w-6 h-6 text-[#1EAEDB] inline" />
-        <Star className="w-6 h-6 text-[#1EAEDB] inline" />
-        <Star className="w-6 h-6 text-[#1EAEDB] inline" />
-        <Star className="w-6 h-6 text-[#1EAEDB] inline" />
-        <Star className="w-6 h-6 text-[#1EAEDB] inline" />
-      </div>
-      <p className="text-body mb-4 italic">{quote}</p>
-      <div>
-        <p className="font-semibold text-heading">{author}</p>
-        <p className="text-muted text-sm">{company}</p>
-      </div>
-    </div>
-  );
-
-  // Case study card component
-  const CaseStudyCard = ({ title, description, image }: { title: string; description: string; image: string }) => (
-    <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all bg-surface-card border border-border-theme">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-3 text-heading">{title}</h3>
-        <p className="text-body mb-4">{description}</p>
-        <button className="text-[#1EAEDB] font-semibold hover:text-[#1795BD] transition-colors">
-          Read Case Study →
-        </button>
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-surface relative grain-overlay">
       <div className="relative z-10">
         <Banner />
-        {/* Value Proposition - Top of Page */}
-        <div className="max-w-3xl mx-auto mt-8 mb-0 px-4 z-20 relative">
-          <div className="bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl shadow-2xl px-8 py-6 text-center border border-border-theme ring-2 ring-primary/50 ring-offset-2 ring-offset-surface">
-            <h2 className="font-mono font-bold text-lg md:text-xl lg:text-2xl tracking-tight">{siteContent.valueProp.headline}</h2>
-            <p className="text-sm md:text-base font-medium mt-2 text-white/90 leading-relaxed">{siteContent.valueProp.description}</p>
-          </div>
-        </div>
-        {/* News Banner Card below header */}
-        <div className="max-w-2xl mx-auto mt-8 mb-0 px-4 z-20 relative">
-          <a href="#news" className="block bg-gradient-to-r from-[#14B8A6] to-[#1EAEDB] text-white rounded-xl shadow-2xl px-6 py-3 text-center font-semibold transition-all text-base md:text-lg border border-border-theme ring-2 ring-accent-teal/50 ring-offset-2 ring-offset-surface hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(30,174,219,0.3)] focus:outline-none focus:ring-4 focus:ring-primary animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 justify-center">
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" className="inline-block flex-shrink-0" aria-hidden="true"><path d="M12 19v-2m0-8v2m0 0a7 7 0 1 1-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/></svg>
-              <span>{siteContent.newsBanner.text} <span className="font-bold">{siteContent.newsBanner.highlight}</span> &rarr;</span>
-            </span>
-          </a>
-        </div>
-        {/* Mission/About Me Section - Near Top */}
-        <section id="mission" className="py-10 md:py-16 px-2 md:px-6 bg-surface-subtle">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold mb-6 text-heading tracking-tight">{siteContent.mission.title}</h2>
-            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl mx-auto leading-relaxed">{siteContent.mission.description}</p>
-            <a href="#about" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.mission.cta}</a>
-          </div>
-        </section>
-        {/* Hero Section */}
-        <section className="relative py-8 md:py-12 px-2 md:px-6">
+
+        {/* News Announcement Strip */}
+        <a href="#news" className="block bg-gradient-to-r from-[#14B8A6] to-[#1EAEDB] text-white text-center py-2 px-4 text-sm font-medium transition-colors hover:opacity-90">
+          <span>{siteContent.newsBanner.text} <span className="font-bold">{siteContent.newsBanner.highlight}</span> &rarr;</span>
+        </a>
+
+        {/* Hero Section — First real content */}
+        <section className="relative py-10 md:py-16 px-2 md:px-6">
           <div className="max-w-5xl mx-auto bg-surface-elevated/90 backdrop-blur-md rounded-xl shadow-lg p-6 md:p-10 border border-border-theme">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
+                <p className="text-sm font-mono font-semibold text-[#14B8A6] tracking-widest uppercase mb-3">{siteContent.valueProp.headline}</p>
                 <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-mono font-black mb-4 md:mb-6 text-heading tracking-tight">
                   {siteContent.hero.title}
                 </h1>
@@ -230,16 +188,15 @@ const LandingPage = () => {
                   {siteContent.hero.subtitle}
                 </p>
                 <div className="flex gap-3 md:gap-4">
-                  <button className="bg-gradient-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:shadow-lg hover:scale-105" onClick={() => { window.location.hash = '#contact'; }}>
+                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:shadow-lg hover:scale-105">
                     {siteContent.hero.ctaPrimary}
-                  </button>
-                  <button className="border-2 border-border-theme hover:border-[#1EAEDB] hover:bg-[#1EAEDB]/10 text-heading px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:scale-105" onClick={() => { window.location.hash = '#about'; }}>
+                  </a>
+                  <button className="border-2 border-border-theme hover:border-[#1EAEDB] hover:bg-[#1EAEDB]/10 text-heading px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:scale-105" onClick={() => { window.location.hash = '#services'; }}>
                     {siteContent.hero.ctaSecondary}
                   </button>
                 </div>
               </div>
               <div className="flex justify-center md:justify-end md:pr-6 lg:pr-10">
-                {/* Hero Image: Office Astronaut */}
                 <img
                   src="/lovable-uploads/OfficeAstronaut.jpeg"
                   alt="Astronaut working at a desk in a modern office, symbolizing secure AI innovation"
@@ -290,8 +247,7 @@ const LandingPage = () => {
               })}
             </ul>
             <div className="text-center mt-8">
-              <a href="#contact" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block mr-4 hover:shadow-lg hover:scale-105">{siteContent.services.ctaPrimary}</a>
-              <a href="#about" className="border-2 border-primary hover:bg-primary/10 text-primary px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:scale-105">{siteContent.services.ctaSecondary}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.services.ctaPrimary}</a>
             </div>
           </div>
         </section>
@@ -299,7 +255,33 @@ const LandingPage = () => {
         {/* Stats Section */}
         <StatsSection />
 
-        {/* Team Section - Simplified */}
+        {/* Featured At Section */}
+        <section className="py-8 md:py-10 px-2 md:px-6 bg-surface border-y border-border-theme">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-muted text-sm font-mono tracking-widest uppercase mb-6">{siteContent.featuredAt.title}</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {siteContent.featuredAt.items.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity group"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-border-theme"
+                  />
+                  <span className="text-body font-medium text-sm md:text-base group-hover:text-[#1EAEDB] transition-colors">{item.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
         <section id="about" className="py-12 md:py-16 px-2 md:px-6 bg-gradient-primary">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold text-center mb-4 text-white tracking-tight">
@@ -310,7 +292,7 @@ const LandingPage = () => {
               <TeamMemberCard />
             </div>
             <div className="text-center mt-8">
-              <a href="#contact" className="bg-surface text-primary hover:bg-surface-subtle px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.team.cta}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-surface text-primary hover:bg-surface-subtle px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.team.cta}</a>
             </div>
           </div>
         </section>
@@ -350,49 +332,7 @@ const LandingPage = () => {
               })}
             </div>
             <div className="text-center mt-10">
-              <a href="#contact" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.whyChooseUs.cta}</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Blog Preview Section */}
-        <section className="py-12 md:py-16 px-2 md:px-6 bg-surface">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold text-center mb-4 text-heading tracking-tight">
-              {siteContent.blog.title}
-            </h2>
-            <p className="text-center text-body mb-8 max-w-2xl mx-auto">{siteContent.blog.subtitle}</p>
-            <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-              {siteContent.blog.posts.map((post, index) => {
-                const gradients = [
-                  'from-primary/80',
-                  'from-accent-teal/80',
-                  'from-primary-dark/80',
-                ];
-                return (
-                  <div key={index} className="bg-surface-card rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group border border-border-theme">
-                    <div className="relative">
-                      <div className={`absolute inset-0 bg-gradient-to-t ${gradients[index % gradients.length]} to-transparent z-10`}></div>
-                      <img src={post.image} alt={`Cover for '${post.title}' blog post`} loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="w-full h-48 object-cover" />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-lg font-bold mb-4 text-heading">{post.title}</h3>
-                      <a href={post.link} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-4 py-2 rounded-md text-sm font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">Read on Medium</a>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="text-center mt-10">
-              <a
-                href={siteContent.blog.ctaPrimaryLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block mr-4 hover:shadow-lg hover:scale-105"
-              >
-                {siteContent.blog.ctaPrimary}
-              </a>
-              <a href="#services" className="border-2 border-primary hover:bg-primary/10 text-primary px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:scale-105">{siteContent.blog.ctaSecondary}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.whyChooseUs.cta}</a>
             </div>
           </div>
         </section>
@@ -422,9 +362,6 @@ const LandingPage = () => {
                       {newsItem.links.about && (
                         <a href={newsItem.links.about} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:text-primary-light transition-colors">About Event</a>
                       )}
-                      {newsItem.links.register && (
-                        <a href={newsItem.links.register} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:text-primary-light transition-colors">Event Details & Registration</a>
-                      )}
                       {newsItem.links.recording && (
                         <a href={newsItem.links.recording} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:text-primary-light transition-colors">Watch Recording</a>
                       )}
@@ -445,11 +382,17 @@ const LandingPage = () => {
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               {siteContent.contact.subtitle}
             </p>
-            <a href={`mailto:${siteContent.contact.email}`} className="bg-[#1EAEDB] text-white hover:bg-[#1795BD] px-6 py-3 rounded-lg text-lg font-bold transition-all inline-block shadow-lg hover:scale-105">
-              {siteContent.contact.cta}
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-[#1EAEDB] text-white hover:bg-[#1795BD] px-6 py-3 rounded-lg text-lg font-bold transition-all inline-block shadow-lg hover:scale-105">
+                {siteContent.contact.cta}
+              </a>
+              <a href={`mailto:${siteContent.contact.email}`} className="text-white/80 hover:text-white transition-colors text-sm font-mono">
+                or email {siteContent.contact.email}
+              </a>
+            </div>
           </div>
         </section>
+
         {/* Footer */}
         <footer className="bg-surface border-t border-border-theme text-heading py-8 md:py-10 px-4 md:px-8">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
@@ -459,16 +402,15 @@ const LandingPage = () => {
                 {siteContent.footer.tagline}
               </p>
               <div className="mt-4 flex gap-6">
-                <a href="#services" className="text-muted hover:text-[#1EAEDB] transition-colors">Services</a>
-                <a href="#about" className="text-muted hover:text-[#1EAEDB] transition-colors">About</a>
-                <a href="#contact" className="text-muted hover:text-[#1EAEDB] transition-colors">Contact</a>
-                <a href="#mission" className="text-muted hover:text-[#1EAEDB] transition-colors">Mission</a>
+                {siteContent.footer.links.map((link, index) => (
+                  <a key={index} href={link.href} className="text-muted hover:text-[#1EAEDB] transition-colors">{link.text}</a>
+                ))}
               </div>
             </div>
             <div className="md:text-right">
               <h3 className="text-lg font-semibold mb-4 font-mono">Contact</h3>
               <p className="text-muted">{siteContent.company.email}</p>
-              <a href={`mailto:${siteContent.company.email}`} className="inline-block mt-2 text-[#1EAEDB] hover:underline">Email Us</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-[#1EAEDB] hover:underline font-semibold">Book a Call</a>
             </div>
           </div>
         </footer>
