@@ -1,3 +1,5 @@
+import { siteContent } from "../content/siteContent";
+
 interface StatItemProps {
   number: string;
   label: string;
@@ -16,54 +18,47 @@ const StatItem = ({ number, label, icon }: StatItemProps) => (
   </div>
 );
 
+const statIcons = [
+  // Years in Cybersecurity — clock
+  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>,
+  // Repositories Analyzed — code/folder
+  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+  </svg>,
+  // MCP Servers Assessed — server
+  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+  </svg>,
+  // Vulnerabilities Discovered — bug/alert
+  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+  </svg>,
+];
+
 const StatsSection = () => {
+  const { title, subtitle, items } = siteContent.stats;
+
   return (
     <section className="py-16 md:py-24 px-2 md:px-6 bg-[#1A1A1A]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-center mb-4 text-[#F5F5F5] tracking-tight">
-          Trusted by Organizations Worldwide
+          {title}
         </h2>
         <p className="text-center text-[#B0B0B0] mb-16 max-w-2xl mx-auto">
-          Our track record speaks for itself
+          {subtitle}
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          <StatItem
-            number="15+"
-            label="Years Experience"
-            icon={
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            }
-          />
-          <StatItem
-            number="100+"
-            label="Clients Served"
-            icon={
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            }
-          />
-          <StatItem
-            number="24/7"
-            label="Support Available"
-            icon={
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            }
-          />
-          <StatItem
-            number="100%"
-            label="Client Satisfaction"
-            icon={
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            }
-          />
+          {items.map((item, index) => (
+            <StatItem
+              key={index}
+              number={item.number}
+              label={item.label}
+              icon={statIcons[index]}
+            />
+          ))}
         </div>
       </div>
     </section>

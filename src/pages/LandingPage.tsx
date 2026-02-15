@@ -1,4 +1,4 @@
-import { Shield, Lock, LineChart, Star, BookOpen, AlertCircle, Award, CheckCircle2, Menu, X } from "lucide-react";
+import { Shield, Lock, LineChart, Brain, Star, BookOpen, AlertCircle, Award, CheckCircle2, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import BackgroundPattern from "../components/BackgroundPattern";
 import StatsSection from "../components/StatsSection";
@@ -261,6 +261,7 @@ const LandingPage = () => {
                   Lock: Lock,
                   Shield: Shield,
                   LineChart: LineChart,
+                  Brain: Brain,
                 };
                 const Icon = iconMap[service.icon] || Shield;
                 const gradients = [

@@ -5,23 +5,23 @@ export const siteContent = {
   // Company Information
   company: {
     name: "Singularity Systems",
-    tagline: "Securing Your AI Future",
+    tagline: "AI Security Architecture & Consulting",
     email: "contact@securingthesingularity.com",
-    description: "Expert cybersecurity consulting for the age of artificial intelligence.",
+    description: "AI security architecture, tooling, and strategy — built by practitioners who build the tools.",
   },
 
   // Hero Section
   hero: {
-    title: "Securing Your AI Future",
-    subtitle: "Expert cybersecurity consulting for the age of artificial intelligence. We provide fractional CISO services, GRC solutions, and AI security consulting.",
+    title: "AI Security Architecture & Consulting",
+    subtitle: "We design secure AI systems, build security tooling, and help organizations deploy AI safely — grounded in hands-on experience building platforms like ThinkTank and Credence.",
     ctaPrimary: "Schedule Consultation",
     ctaSecondary: "Learn More",
   },
 
   // Value Proposition Banner
   valueProp: {
-    headline: "Your AI. Your Security. Our Mission.",
-    description: "Singularity Systems empowers organizations to thrive safely in the age of artificial intelligence with expert cybersecurity, GRC, and AI risk solutions.",
+    headline: "Securing AI Systems From the Inside Out",
+    description: "We build AI security tools, so we understand the attack surface firsthand. Singularity Systems helps organizations adopt AI with confidence through architecture, tooling, and strategy.",
   },
 
   // News Banner
@@ -34,40 +34,40 @@ export const siteContent = {
   // Mission Section
   mission: {
     title: "Our Mission",
-    description: "To help organizations unlock the promise of AI while staying secure, compliant, and resilient. Led by Phil Stafford, we combine deep technical expertise with a passion for empowering people and protecting what matters most.",
+    description: "To help organizations adopt AI securely through hands-on architecture, purpose-built tooling, and practical strategy. Led by Phil Stafford, we combine deep technical expertise with real-world experience building AI security platforms.",
     cta: "Meet Our Founder",
   },
 
   // Services Section
   services: {
     title: "Our Services",
-    subtitle: "Comprehensive cybersecurity solutions tailored for the AI era",
+    subtitle: "AI security architecture, tooling, and strategy — built by practitioners",
     items: [
       {
-        title: "Fractional CISO",
-        icon: "Lock",
-        description: [
-          "Security leadership on-demand",
-          "Strategy, policy, and roadmap",
-          "Board & executive reporting",
-        ],
-      },
-      {
-        title: "GRC Solutions",
-        icon: "LineChart",
-        description: [
-          "Governance, risk, and compliance",
-          "Frameworks (NIST, ISO, SOC2, etc.)",
-          "Risk assessments & audits",
-        ],
-      },
-      {
-        title: "AI Security",
+        title: "AI Security Architecture",
         icon: "Shield",
         description: [
-          "AI/ML risk & threat modeling",
-          "AI governance & policy",
-          "Ethics, privacy, and safety",
+          "Threat modeling for AI/ML pipelines",
+          "Secure design for LLM applications",
+          "AI deployment security review",
+        ],
+      },
+      {
+        title: "AI Agent & MCP Security",
+        icon: "Brain",
+        description: [
+          "Security analysis for autonomous agents",
+          "MCP server verification & trust scoring",
+          "Agent trust frameworks",
+        ],
+      },
+      {
+        title: "AI Security Strategy",
+        icon: "LineChart",
+        description: [
+          "AI risk assessments & governance",
+          "Frameworks for safe AI adoption",
+          "Security roadmaps for AI-forward orgs",
         ],
       },
     ],
@@ -77,27 +77,27 @@ export const siteContent = {
 
   // Stats Section
   stats: {
-    title: "Trusted by Organizations Worldwide",
-    subtitle: "Our track record speaks for itself",
+    title: "Built and Proven in Production",
+    subtitle: "Real tools, real analysis, real results",
     items: [
-      { number: "15+", label: "Years Experience" },
-      { number: "100+", label: "Clients Served" },
-      { number: "24/7", label: "Support Available" },
-      { number: "100%", label: "Client Satisfaction" },
+      { number: "15+", label: "Years in Cybersecurity" },
+      { number: "60+", label: "Repositories Analyzed" },
+      { number: "26", label: "MCP Servers Assessed" },
+      { number: "14+", label: "Vulnerabilities Discovered" },
     ],
   },
 
   // Team Section
   team: {
     title: "Meet Our Leadership",
-    subtitle: "Expert leadership in cybersecurity and AI safety",
+    subtitle: "AI security architecture backed by 15+ years in cybersecurity",
     cta: "Contact Us",
     members: [
       {
         name: "Phil Stafford",
         title: "Founder & Principal Consultant",
         image: "/lovable-uploads/BlueShirt.PNG",
-        bio: "Phil Stafford is a cybersecurity expert with over 15 years of experience helping organizations secure their digital assets and navigate complex technology risks. He specializes in AI security, governance, and risk management, and is passionate about empowering businesses to thrive safely in the age of artificial intelligence.",
+        bio: "Phil Stafford is an AI security architect with over 15 years of cybersecurity experience. He builds tools like ThinkTank — a multi-agent system for automated security analysis of AI repositories — and Credence, a trust and verification registry for MCP servers. Phil combines hands-on engineering with strategic consulting to help organizations deploy AI securely.",
         social: {
           linkedin: "http://www.linkedin.com/in/phillipstafford",
           github: "https://github.com/pestafford",
@@ -110,27 +110,27 @@ export const siteContent = {
   // Why Choose Us Section
   whyChooseUs: {
     title: "Why Choose Us",
-    subtitle: "Trusted expertise in cybersecurity and AI safety",
+    subtitle: "AI security expertise backed by real tools and real results",
     items: [
       {
-        title: "Industry Expertise",
+        title: "Hands-On Builder",
         icon: "Award",
-        description: "15+ years of cybersecurity experience",
+        description: "Built ThinkTank (multi-agent security analysis) and Credence (MCP server security registry)",
       },
       {
-        title: "AI Specialization",
+        title: "Deep AI Expertise",
         icon: "AlertCircle",
-        description: "Deep understanding of AI security challenges",
+        description: "Built multi-agent analysis systems; understands AI attack surfaces from the inside",
       },
       {
-        title: "Proven Track Record",
-        icon: "CheckCircle2",
-        description: "100+ successful client engagements",
-      },
-      {
-        title: "Continuous Learning",
+        title: "Research-Driven",
         icon: "BookOpen",
-        description: "Always up-to-date with latest threats",
+        description: "Conference speaker (MLOps, CyberLab Con) with active thought leadership",
+      },
+      {
+        title: "Practical Focus",
+        icon: "CheckCircle2",
+        description: "Real vulnerabilities found, real tools deployed — not theoretical frameworks",
       },
     ],
     cta: "Get Started",
@@ -199,15 +199,15 @@ export const siteContent = {
 
   // Contact Section
   contact: {
-    title: "Ready to Secure Your Future?",
-    subtitle: "Let's discuss how we can help protect your business in the age of AI.",
+    title: "Ready to Secure Your AI Systems?",
+    subtitle: "Let's discuss how we can help you deploy AI securely — from architecture to strategy.",
     cta: "Contact Us Today",
     email: "contact@securingthesingularity.com",
   },
 
   // Footer
   footer: {
-    tagline: "Securing the future of technology, one business at a time.",
+    tagline: "AI security architecture, tooling, and strategy — built by practitioners.",
     links: [
       { text: "Services", href: "#services" },
       { text: "About", href: "#about" },
