@@ -12,18 +12,18 @@ const StatItem = ({ number, label, icon }: StatItemProps) => (
     <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent-teal bg-clip-text text-transparent mb-2">
       {number}
     </div>
-    <div className="text-gray-600 font-medium">{label}</div>
+    <div className="text-[#B0B0B0] font-medium">{label}</div>
   </div>
 );
 
 const StatsSection = () => {
   return (
-    <section className="py-16 md:py-24 px-2 md:px-6 bg-gradient-to-b from-cyan-50 to-white">
+    <section className="py-16 md:py-24 px-2 md:px-6 bg-[#1A1A1A]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-4 text-secondary tracking-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-center mb-4 text-[#F5F5F5] tracking-tight">
           Trusted by Organizations Worldwide
         </h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-[#B0B0B0] mb-16 max-w-2xl mx-auto">
           Our track record speaks for itself
         </p>
 
