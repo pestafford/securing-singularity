@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phil Stafford | AI Security Architect</title>
+  <meta name="description" content="Phil Stafford — AI Security Architect, Fractional CISO, Principal Consultant at Singularity Systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0f1a;
+      --bg-elevated: #0f1520;
+      --bg-surface: #141c2a;
+      --bg-hover: #1a2436;
+      --border: #1e2a3a;
+      --border-accent: #1a3a4a;
+      --text-1: #e2e8f0;
+      --text-2: #8494a7;
+      --text-3: #4a5a6e;
+      --accent: #14b8a6;
+      --accent-dim: rgba(20, 184, 166, 0.12);
+      --accent-line: rgba(20, 184, 166, 0.25);
+      --blue: #0ea5e9;
+      --blue-dim: rgba(14, 165, 233, 0.1);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Space Grotesk', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', monospace;
+      --radius: 2px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f5f7fa;
+      --bg-elevated: #ffffff;
+      --bg-surface: #eef2f6;
+      --bg-hover: #e4e9f0;
+      --border: #d0d8e0;
+      --border-accent: #a0c8d4;
+      --text-1: #0a1628;
+      --text-2: #4a5a70;
+      --text-3: #8a96a6;
+      --accent: #0d9488;
+      --accent-dim: rgba(13, 148, 136, 0.08);
+      --accent-line: rgba(13, 148, 136, 0.2);
+      --blue: #0284c7;
+      --blue-dim: rgba(2, 132, 199, 0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-1);
+      min-height: 100vh;
+      transition: background 0.4s, color 0.3s;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ───── BACKGROUND: TOPO CONTOUR ───── */
+    .topo-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+
+    [data-theme="light"] .topo-bg { opacity: 0.25; }
+
+    .topo-bg svg {
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      top: -20%;
+      left: -20%;
+      animation: topo-drift 60s linear infinite;
+    }
+
+    @keyframes topo-drift {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-40px, 20px) rotate(3deg); }
+    }
+
+    /* ───── LAYOUT ───── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    /* ───── THEME TOGGLE ───── */
+    .theme-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      width: 36px;
+      height: 36px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+      color: var(--text-2);
+    }
+
+    .theme-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ───── HERO ───── */
+    .hero {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .photo-frame {
+      width: 96px;
+      height: 96px;
+      position: relative;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+      filter: contrast(1.05) saturate(0.9);
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: var(--radius);
+    }
+
+    .hero-text { padding-top: 2px; }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .hero-role {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .hero-loc {
+      font-size: 13px;
+      color: var(--text-3);
+    }
+
+    /* ───── BIO ───── */
+    .bio {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-2);
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      max-width: 560px;
+    }
+
+    .bio strong {
+      color: var(--text-1);
+      font-weight: 500;
+    }
+
+    /* ───── SECTION ───── */
+    .section {
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* ───── LINKS ROW ───── */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-2);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .link-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .link-pill svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .link-pill:hover svg { opacity: 1; }
+
+    /* ───── SERVICES ───── */
+    .service-list {
+      display: grid;
+      gap: 2px;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .service:last-child { border-bottom: none; }
+
+    .service-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-3);
+      padding-top: 2px;
+    }
+
+    .service-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: 3px;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+
+    /* ───── PROJECTS ───── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .project {
+      padding: 20px 16px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .project-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+
+    .project-tag {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    /* ───── CREDENTIALS ───── */
+    .cred-row {
+      margin-bottom: 16px;
+    }
+
+    .cred-row:last-child { margin-bottom: 0; }
+
+    .cred-heading {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cred-item {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    .cred-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cred-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-2);
+    }
+
+    /* ───── WRITING ───── */
+    .writing-list {
+      list-style: none;
+    }
+
+    .writing-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .writing-item:last-child { border-bottom: none; }
+
+    .writing-item a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.5;
+      transition: color 0.2s;
+    }
+
+    .writing-item a:hover { color: var(--accent); }
+
+    .writing-item a::before {
+      content: '\2192';
+      margin-right: 10px;
+      color: var(--text-3);
+      font-size: 12px;
+    }
+
+    .writing-item a:hover::before { color: var(--accent); }
+
+    .speaking-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-3);
+      padding-left: 22px;
+      border-left: 2px solid var(--border);
+    }
+
+    /* ───── CTA ───── */
+    .cta-block {
+      text-align: center;
+      padding: 48px 0 0;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--bg);
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 24px rgba(20, 184, 166, 0.25);
+    }
+
+    [data-theme="light"] .cta-btn { color: #fff; }
+
+    .cta-email {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+
+    .cta-email a {
+      color: var(--text-2);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .cta-email a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ───── FOOTER ───── */
+    .footer {
+      text-align: center;
+      padding: 48px 0 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-3);
+    }
+
+    .footer a {
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    .footer-tagline {
+      margin-top: 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: 0.02em;
+    }
+
+    /* ───── ANIMATED ACCENT LINE ───── */
+    .accent-line {
+      width: 100%;
+      height: 1px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .accent-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: scan 4s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      0% { left: -60px; }
+      100% { left: 100%; }
+    }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 520px) {
+      .hero {
+        grid-template-columns: 72px 1fr;
+        gap: 16px;
+      }
+      .photo-frame { width: 72px; height: 72px; }
+      .hero-name { font-size: 26px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .wrapper { padding: 32px 16px 48px; }
+    }
+
+    /* ───── FADE IN ───── */
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    .fi.visible {
+      animation: fi 0.5s ease forwards;
+    }
+
+    @keyframes fi {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo contour background -->
+  <div class="topo-bg">
+    <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-50 300c80-40 160-80 260-60s200 80 300 60 200-80 300-60" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 340c80-30 160-60 260-50s200 60 300 50 200-60 300-50" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 380c80-20 160-40 260-30s200 40 300 30 200-40 300-30" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 260c80-50 160-100 260-80s200 100 300 80 200-100 300-80" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 220c80-60 160-120 260-100s200 120 300 100 200-120 300-100" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 180c90-50 170-100 270-70s210 100 310 70 210-100 310-70" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 420c70-15 150-30 250-20s190 30 290 20 190-30 290-20" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 460c70-10 140-20 240-15s180 20 280 15 180-20 280-15" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 140c100-40 180-80 280-50s220 80 320 50 220-80 320-50" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 100c100-30 190-60 290-35s230 60 330 35 230-60 330-35" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 500c60-8 130-16 230-10s170 16 270 10 170-16 270-10" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <path d="M-50 540c60-5 120-10 220-6s160 10 260 6 160-10 260-6" stroke="var(--border)" stroke-width="0.5" fill="none"/>
+      <!-- Accent contour -->
+      <path d="M-50 300c80-40 160-80 260-60s200 80 300 60 200-80 300-60" stroke="var(--accent-line)" stroke-width="0.8" fill="none" stroke-dasharray="8 12" opacity="0.6">
+        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+  </div>
+
+  <!-- Theme toggle -->
+  <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+    <span id="themeIcon">&#9789;</span>
+  </button>
+
+  <div class="wrapper">
+
+    <!-- Scanning accent line -->
+    <div class="accent-line"></div>
+
+    <!-- HERO -->
+    <div class="hero fi">
+      <div class="photo-frame">
+        <img src="/lovable-uploads/BlueShirtSmall.png" alt="Phil Stafford" />
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-name">Phil Stafford</h1>
+        <div class="hero-role">AI Security Architect</div>
+        <div class="hero-loc">Singularity Systems &middot; San Francisco</div>
+      </div>
+    </div>
+
+    <!-- BIO -->
+    <p class="bio fi">
+      I build tools that make AI systems trustworthy. <strong>Credence</strong> verifies
+      the provenance of MCP servers and agentic integrations. <strong>ThinkTank</strong> uses
+      structured adversarial debate to surface risks that consensus misses. As a fractional CISO
+      I help organizations deploy AI without the blind spots&mdash;fifteen years of security
+      engineering, applied to the systems that are about to run everything.
+    </p>
+
+    <!-- LINKS -->
+    <div class="links fi">
+      <a href="http://www.linkedin.com/in/phillipstafford" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/pestafford" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://medium.com/@pe.stafford" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42S14.2 15.54 14.2 12s1.52-6.42 3.38-6.42 3.38 2.88 3.38 6.42zm2.92 0c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/></svg>
+        Blog
+      </a>
+      <a href="https://www.youtube.com/@SecuringTheSingularity/" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        YouTube
+      </a>
+      <a href="mailto:contact@securingthesingularity.com" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="section fi">
+      <div class="section-label">Services</div>
+      <div class="service-list">
+        <div class="service">
+          <div class="service-num">01</div>
+          <div>
+            <div class="service-name">AI Security Architecture</div>
+            <div class="service-desc">Threat modeling for AI/ML pipelines. Secure design for LLM applications. Deployment security review and hardening.</div>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-num">02</div>
+          <div>
+            <div class="service-name">Agent &amp; Protocol Security</div>
+            <div class="service-desc">Trust verification for MCP servers, A2A agents, and autonomous integrations. Supply chain provenance analysis.</div>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-num">03</div>
+          <div>
+            <div class="service-name">Fractional CISO</div>
+            <div class="service-desc">AI risk assessments, governance frameworks, and security roadmaps for organizations adopting AI at scale.</div>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-num">04</div>
+          <div>
+            <div class="service-name">Offensive AI Testing</div>
+            <div class="service-desc">Penetration testing for AI systems. Prompt injection, agent exploitation, supply chain analysis, and adversarial evaluation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section fi">
+      <div class="section-label">Projects</div>
+      <div class="project-grid">
+        <a href="https://credence.securingthesingularity.com" target="_blank" rel="noopener" class="project">
+          <div class="project-name"><span class="project-dot"></span> Credence</div>
+          <div class="project-desc">Cryptographic trust registry for MCP servers and agentic integrations. Adversarial multi-agent verification.</div>
+          <div class="project-tag">trust &amp; verification</div>
+        </a>
+        <a href="https://github.com/pestafford" target="_blank" rel="noopener" class="project">
+          <div class="project-name"><span class="project-dot"></span> ThinkTank</div>
+          <div class="project-desc">Structured dissent engine. Multiple adversarial agents debate security findings before consensus.</div>
+          <div class="project-tag">multi-agent systems</div>
+        </a>
+        <a href="https://github.com/pestafford" target="_blank" rel="noopener" class="project">
+          <div class="project-name"><span class="project-dot"></span> MCP Fuzzer</div>
+          <div class="project-desc">Runtime security fuzzer with 150+ attack payloads targeting MCP server implementations.</div>
+          <div class="project-tag">offensive tooling</div>
+        </a>
+        <a href="https://github.com/pestafford" target="_blank" rel="noopener" class="project">
+          <div class="project-name"><span class="project-dot"></span> Manifold</div>
+          <div class="project-desc">Agentic threat intelligence platform for continuous supply chain and integration monitoring.</div>
+          <div class="project-tag">threat intel</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CREDENTIALS -->
+    <div class="section fi">
+      <div class="section-label">Credentials</div>
+      <div class="cred-row">
+        <div class="cred-heading">Education</div>
+        <div class="cred-item">MS Cybersecurity &amp; Information Assurance &mdash; Western Governors University</div>
+        <div class="cred-item">AI Programming &amp; Deployment &mdash; The Multiverse School, San Francisco</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-heading">Certifications</div>
+        <div class="cred-badges">
+          <span class="cred-badge">CCSP</span>
+          <span class="cred-badge">SSCP</span>
+          <span class="cred-badge">Pentest+</span>
+          <span class="cred-badge">CySA+</span>
+          <span class="cred-badge">Security+</span>
+          <span class="cred-badge">Network+</span>
+          <span class="cred-badge">CloudNetX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WRITING -->
+    <div class="section fi">
+      <div class="section-label">Writing &amp; Speaking</div>
+      <ul class="writing-list">
+        <li class="writing-item"><a href="https://medium.com/@pe.stafford" target="_blank" rel="noopener">Poisoned Pipelines: The AI Supply Chain Attack That Doesn't Crash Anything</a></li>
+        <li class="writing-item"><a href="https://medium.com/@pe.stafford" target="_blank" rel="noopener">When AI Needs to Argue: Why Safe AI Depends on Structured Disagreement</a></li>
+        <li class="writing-item"><a href="https://medium.com/@pe.stafford" target="_blank" rel="noopener">MCP: Plug-and-Play? Or Plug-and-Pray?</a></li>
+        <li class="writing-item"><a href="https://medium.com/@pe.stafford" target="_blank" rel="noopener">How I Built a Debate Swarm to Keep My AI Honest</a></li>
+      </ul>
+      <div class="speaking-note">
+        MLOps Community &middot; Nov 2025 &nbsp;&nbsp;|&nbsp;&nbsp; CyberLab Con &middot; Jul 2025
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block fi">
+      <a href="https://calendly.com/phil-securingthesingularity/30min" target="_blank" rel="noopener" class="cta-btn">
+        Book a conversation &rarr;
+      </a>
+      <div class="cta-email">
+        or <a href="mailto:contact@securingthesingularity.com">contact@securingthesingularity.com</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer fi">
+      <a href="https://securingthesingularity.com">securingthesingularity.com</a>
+      <div class="footer-tagline">Farther from Skynet, closer to Multivac.</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Theme
+    !function(){
+      var t=document.getElementById('themeToggle'),
+          i=document.getElementById('themeIcon'),
+          h=document.documentElement,
+          s=localStorage.getItem('sts-theme');
+      if(s){h.setAttribute('data-theme',s);i.textContent=s==='light'?'\u2600':'\u263D'}
+      t.addEventListener('click',function(){
+        var c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+        h.setAttribute('data-theme',n);
+        localStorage.setItem('sts-theme',n);
+        i.textContent=n==='light'?'\u2600':'\u263D';
+      });
+    }();
+
+    // Scroll reveal
+    !function(){
+      var els=document.querySelectorAll('.fi');
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){obs.observe(el)});
+    }();
+  </script>
+</body>
+</html>
