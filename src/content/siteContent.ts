@@ -196,7 +196,7 @@ export const siteContent = {
 
   // Footer
   footer: {
-    tagline: "AI security architecture, tooling, and strategy — built by practitioners.",
+    tagline: "Agentic problems require agentic solutions.",
     links: [
       { text: "Services", href: "#services" },
       { text: "About", href: "#about" },
