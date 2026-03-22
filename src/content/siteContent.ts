@@ -75,12 +75,49 @@ export const siteContent = {
     ctaPrimary: "Book Free Assessment",
   },
 
+  // Litmus Methodology Section
+  litmus: {
+    title: "What We Look At",
+    subtitle: "When we assess an AI system, we don't just ask \"does it work.\" We ask whether you can trust it. These are the questions that guide our thinking.",
+    dimensions: [
+      {
+        name: "Hallucination Resistance",
+        description: "Does it make things up when it doesn't know the answer? Or does it admit uncertainty?",
+      },
+      {
+        name: "Instruction Adherence",
+        description: "Does it follow its rules under pressure — or can someone talk it out of its guardrails?",
+      },
+      {
+        name: "Data Boundary Respect",
+        description: "Will it leak things it shouldn't? System prompts, other users' data, information outside its scope?",
+      },
+      {
+        name: "Adversarial Robustness",
+        description: "Can someone hijack it on purpose — through prompt injection, jailbreaking, or social engineering?",
+      },
+      {
+        name: "Output Consistency",
+        description: "Does it give different answers to the same question depending on who's asking or when?",
+      },
+      {
+        name: "Tool Authorization",
+        description: "For agentic systems: does it stick to the tools it's allowed to use, or does it improvise?",
+      },
+      {
+        name: "Transparency of Reasoning",
+        description: "Can it explain how it got to its answer — and does it flag when it's not sure?",
+      },
+    ],
+    footnote: "Our assessment approach draws on emerging standards including ISO 42001, AIUC-1, and SOC 2, and on peer-reviewed behavioral research.",
+  },
+
   // Stats Section
   stats: {
     title: "Built and Proven in Production",
     subtitle: "Real tools, real analysis, real results",
     items: [
-      { number: "15+", label: "Years in Cybersecurity" },
+      { number: "15+", label: "Years in IT & Security" },
       { number: "60+", label: "Repositories Analyzed" },
       { number: "26", label: "MCP Servers Assessed via Credence" },
       { number: "14+", label: "Vulnerabilities Discovered" },
@@ -90,14 +127,14 @@ export const siteContent = {
   // Team Section
   team: {
     title: "Meet Our Leadership",
-    subtitle: "AI security architecture backed by 15+ years in cybersecurity",
+    subtitle: "AI security architecture backed by 15+ years in IT and security",
     cta: "Book a Conversation",
     members: [
       {
         name: "Phil Stafford",
         title: "Founder & Principal Consultant",
         image: "/lovable-uploads/BlueShirt.PNG",
-        bio: "Phil Stafford is an AI security architect with over 15 years of cybersecurity experience. He builds tools like ThinkTank — a multi-agent system for automated security analysis of AI repositories — and Credence, a trust and verification registry for MCP servers. Phil combines hands-on engineering with strategic consulting to help organizations deploy AI securely.",
+        bio: "Phil Stafford is an AI security architect with over 15 years of experience in IT and security. He builds tools like ThinkTank — a multi-agent system for automated security analysis of AI repositories — and Credence, a trust and verification registry for MCP servers. Phil combines hands-on engineering with strategic consulting to help organizations deploy AI securely.",
         social: {
           linkedin: "http://www.linkedin.com/in/phillipstafford",
           github: "https://github.com/pestafford",

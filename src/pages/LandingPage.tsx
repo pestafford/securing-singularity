@@ -172,7 +172,7 @@ const LandingPage = () => {
         <Banner />
 
         {/* News Announcement Strip */}
-        <a href="#news" className="block bg-gradient-to-r from-primary to-accent-warm text-white text-center py-2 px-4 text-sm font-medium transition-colors hover:opacity-90">
+        <a href="#news" className="block bg-primary hover:bg-primary-dark text-white text-center py-2 px-4 text-sm font-medium transition-colors hover:opacity-90">
           <span>{siteContent.newsBanner.text} <span className="font-bold">{siteContent.newsBanner.highlight}</span> &rarr;</span>
         </a>
 
@@ -250,6 +250,39 @@ const LandingPage = () => {
             <div className="text-center mt-8">
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.services.ctaPrimary}</a>
             </div>
+          </div>
+        </section>
+
+        {/* Litmus Methodology Section */}
+        <section id="methodology" className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+              {siteContent.litmus.title}
+            </h2>
+            <p className="text-center text-body mb-10 max-w-2xl mx-auto leading-relaxed">
+              {siteContent.litmus.subtitle}
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {siteContent.litmus.dimensions.map((dim, index) => (
+                <div
+                  key={index}
+                  className="bg-surface-elevated rounded-md border border-border-theme border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="font-mono text-xs font-bold text-primary tracking-wider">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-display font-bold text-heading uppercase tracking-wide text-sm">
+                      {dim.name}
+                    </h3>
+                  </div>
+                  <p className="text-body text-sm leading-relaxed">{dim.description}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-muted text-xs font-mono mt-8 max-w-xl mx-auto tracking-wide">
+              {siteContent.litmus.footnote}
+            </p>
           </div>
         </section>
 
