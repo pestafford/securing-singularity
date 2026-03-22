@@ -7,46 +7,44 @@
   <meta name="description" content="Phil Stafford — AI Security Architect, Fractional AI Security Executive, Principal Consultant at Singularity Systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Work+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #0a0f1a;
-      --bg-elevated: #0f1520;
-      --bg-surface: #141c2a;
-      --bg-hover: #1a2436;
-      --border: #1e2a3a;
-      --border-accent: #1a3a4a;
-      --text-1: #e2e8f0;
-      --text-2: #8494a7;
-      --text-3: #4a5a6e;
-      --accent: #14b8a6;
-      --accent-dim: rgba(20, 184, 166, 0.12);
-      --accent-line: rgba(20, 184, 166, 0.25);
-      --blue: #0ea5e9;
-      --blue-dim: rgba(14, 165, 233, 0.1);
-      --serif: 'Instrument Serif', Georgia, serif;
-      --sans: 'Space Grotesk', system-ui, sans-serif;
+      --bg: #1A1D1B;
+      --bg-elevated: #2C312E;
+      --bg-surface: #232724;
+      --bg-hover: #353a37;
+      --border: rgba(134, 131, 120, 0.15);
+      --border-accent: rgba(42, 157, 143, 0.20);
+      --text-1: #E0DDD4;
+      --text-2: #868378;
+      --text-3: #5a5750;
+      --accent: #2A9D8F;
+      --accent2: #C4956A;
+      --accent-dim: rgba(42, 157, 143, 0.12);
+      --accent-line: rgba(42, 157, 143, 0.10);
+      --display: 'Josefin Sans', sans-serif;
+      --sans: 'Work Sans', system-ui, sans-serif;
       --mono: 'JetBrains Mono', 'SF Mono', monospace;
-      --radius: 2px;
+      --radius: 4px;
     }
 
     [data-theme="light"] {
-      --bg: #f5f7fa;
-      --bg-elevated: #ffffff;
-      --bg-surface: #eef2f6;
-      --bg-hover: #e4e9f0;
-      --border: #d0d8e0;
-      --border-accent: #a0c8d4;
-      --text-1: #0a1628;
-      --text-2: #4a5a70;
-      --text-3: #8a96a6;
-      --accent: #0d9488;
-      --accent-dim: rgba(13, 148, 136, 0.08);
-      --accent-line: rgba(13, 148, 136, 0.2);
-      --blue: #0284c7;
-      --blue-dim: rgba(2, 132, 199, 0.06);
+      --bg: #F2EDE5;
+      --bg-elevated: #FFFFFF;
+      --bg-surface: #FAF7F2;
+      --bg-hover: #EDE8E0;
+      --border: rgba(107, 102, 94, 0.15);
+      --border-accent: rgba(42, 122, 110, 0.20);
+      --text-1: #1E1E1C;
+      --text-2: #6B665E;
+      --text-3: #9A9590;
+      --accent: #2A7A6E;
+      --accent2: #8B5E3C;
+      --accent-dim: rgba(42, 122, 110, 0.08);
+      --accent-line: rgba(42, 122, 110, 0.06);
     }
 
     html { scroll-behavior: smooth; }
@@ -56,33 +54,17 @@
       background: var(--bg);
       color: var(--text-1);
       min-height: 100vh;
-      transition: background 0.4s, color 0.3s;
+      transition: background 0.3s, color 0.3s;
       -webkit-font-smoothing: antialiased;
+      background-image:
+        linear-gradient(var(--accent-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-line) 1px, transparent 1px);
+      background-size: 48px 48px;
     }
 
     /* ───── BACKGROUND: TOPO CONTOUR ───── */
     .topo-bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      opacity: 0.4;
-    }
-
-    [data-theme="light"] .topo-bg { opacity: 0.45; }
-
-    .topo-bg svg {
-      position: absolute;
-      width: 140%;
-      height: 140%;
-      top: -20%;
-      left: -20%;
-      animation: topo-drift 60s linear infinite;
-    }
-
-    @keyframes topo-drift {
-      0% { transform: translate(0, 0) rotate(0deg); }
-      100% { transform: translate(-40px, 20px) rotate(3deg); }
+      display: none;
     }
 
     /* ───── LAYOUT ───── */
@@ -100,8 +82,8 @@
       top: 20px;
       right: 20px;
       z-index: 100;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -122,17 +104,18 @@
     /* ───── HERO ───── */
     .hero {
       display: grid;
-      grid-template-columns: 96px 1fr;
+      grid-template-columns: 128px 1fr;
       gap: 24px;
       align-items: start;
       margin-bottom: 48px;
       padding-bottom: 40px;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
     .photo-frame {
-      width: 96px;
-      height: 96px;
+      width: 128px;
+      height: 128px;
       position: relative;
     }
 
@@ -159,31 +142,36 @@
     .hero-text { padding-top: 2px; }
 
     .hero-name {
-      font-family: var(--serif);
-      font-size: 32px;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.1;
+      font-family: var(--display);
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1.05;
       margin-bottom: 6px;
     }
 
     .hero-role {
       font-family: var(--mono);
       font-size: 12px;
+      font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.04em;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .hero-loc {
-      font-size: 13px;
-      color: var(--text-3);
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--text-2);
     }
 
     /* ───── BIO ───── */
     .bio {
+      font-family: var(--sans);
       font-size: 15px;
-      line-height: 1.75;
+      line-height: 1.7;
       color: var(--text-2);
       margin-bottom: 48px;
       padding-bottom: 40px;
@@ -193,7 +181,7 @@
 
     .bio strong {
       color: var(--text-1);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* ───── SECTION ───── */
@@ -211,9 +199,10 @@
     .section-label {
       font-family: var(--mono);
       font-size: 10px;
-      letter-spacing: 0.16em;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--text-3);
+      color: var(--text-2);
       margin-bottom: 20px;
       display: flex;
       align-items: center;
@@ -223,7 +212,7 @@
     .section-label::before {
       content: '';
       width: 16px;
-      height: 1px;
+      height: 2px;
       background: var(--accent);
     }
 
@@ -240,13 +229,15 @@
     .link-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
+      gap: 8px;
+      padding: 12px 18px;
+      min-height: 44px;
       font-family: var(--mono);
       font-size: 12px;
-      color: var(--text-2);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
       border-radius: var(--radius);
       text-decoration: none;
       transition: all 0.2s;
@@ -254,13 +245,13 @@
 
     .link-pill:hover {
       border-color: var(--accent);
+      background: rgba(42, 157, 143, 0.18);
       color: var(--accent);
-      background: var(--accent-dim);
     }
 
     .link-pill svg {
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       flex-shrink: 0;
       opacity: 0.7;
     }
@@ -270,7 +261,7 @@
     /* ───── SERVICES ───── */
     .service-list {
       display: grid;
-      gap: 2px;
+      gap: 0;
     }
 
     .service {
@@ -287,21 +278,26 @@
     .service-num {
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--text-3);
+      font-weight: 700;
+      color: var(--accent);
       padding-top: 2px;
     }
 
     .service-name {
+      font-family: var(--display);
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       color: var(--text-1);
       margin-bottom: 3px;
     }
 
     .service-desc {
+      font-family: var(--sans);
       font-size: 13px;
-      color: var(--text-3);
-      line-height: 1.5;
+      color: var(--text-2);
+      line-height: 1.6;
     }
 
     /* ───── PROJECTS ───── */
@@ -315,7 +311,8 @@
       padding: 20px 16px;
       background: var(--bg-elevated);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
       text-decoration: none;
       color: inherit;
       display: block;
@@ -325,12 +322,15 @@
 
     .project:hover {
       border-color: var(--accent);
-      transform: translateY(-1px);
+      border-left-color: var(--accent);
     }
 
     .project-name {
+      font-family: var(--display);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: var(--text-1);
       margin-bottom: 6px;
       display: flex;
@@ -347,8 +347,9 @@
     }
 
     .project-desc {
+      font-family: var(--sans);
       font-size: 12px;
-      color: var(--text-3);
+      color: var(--text-2);
       line-height: 1.5;
     }
 
@@ -357,7 +358,8 @@
       font-family: var(--mono);
       font-size: 10px;
       color: var(--accent);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     /* ───── CREDENTIALS ───── */
@@ -370,13 +372,15 @@
     .cred-heading {
       font-family: var(--mono);
       font-size: 10px;
-      color: var(--text-3);
-      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
 
     .cred-item {
+      font-family: var(--sans);
       font-size: 14px;
       color: var(--text-2);
       line-height: 1.6;
@@ -390,12 +394,15 @@
 
     .cred-badge {
       font-family: var(--mono);
-      font-size: 11px;
-      padding: 4px 10px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text-2);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
 
     /* ───── WRITING ───── */
@@ -414,6 +421,7 @@
       padding: 12px 0;
       color: var(--text-2);
       text-decoration: none;
+      font-family: var(--sans);
       font-size: 14px;
       line-height: 1.5;
       transition: color 0.2s;
@@ -432,10 +440,11 @@
 
     .speaking-note {
       margin-top: 16px;
-      font-size: 13px;
+      font-family: var(--mono);
+      font-size: 12px;
       color: var(--text-3);
       padding-left: 22px;
-      border-left: 2px solid var(--border);
+      border-left: 2px solid var(--accent);
     }
 
     /* ───── CTA ───── */
@@ -450,20 +459,21 @@
       gap: 8px;
       padding: 14px 28px;
       font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       color: var(--bg);
       background: var(--accent);
       border: none;
       border-radius: var(--radius);
       text-decoration: none;
-      letter-spacing: 0.02em;
       transition: all 0.2s;
     }
 
     .cta-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 24px rgba(20, 184, 166, 0.25);
+      box-shadow: 0 4px 24px rgba(42, 157, 143, 0.25);
     }
 
     [data-theme="light"] .cta-btn { color: #fff; }
@@ -505,54 +515,39 @@
 
     .footer-tagline {
       margin-top: 8px;
-      font-family: var(--serif);
-      font-style: italic;
+      font-family: var(--display);
+      font-weight: 700;
       font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       color: var(--text-3);
-      letter-spacing: 0.02em;
     }
 
-    /* ───── ANIMATED ACCENT LINE ───── */
+    /* ───── ACCENT LINE ───── */
     .accent-line {
       width: 100%;
-      height: 1px;
+      height: 2px;
       margin-bottom: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .accent-line::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      animation: scan 4s ease-in-out infinite;
-    }
-
-    @keyframes scan {
-      0% { left: -60px; }
-      100% { left: 100%; }
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
     /* ───── RESPONSIVE ───── */
     @media (max-width: 520px) {
       .hero {
-        grid-template-columns: 72px 1fr;
+        grid-template-columns: 96px 1fr;
         gap: 16px;
       }
-      .photo-frame { width: 72px; height: 72px; }
+      .photo-frame { width: 96px; height: 96px; }
       .hero-name { font-size: 26px; }
       .project-grid { grid-template-columns: 1fr; }
       .wrapper { padding: 32px 16px 48px; }
+      .links { gap: 10px; }
     }
 
     /* ───── FADE IN ───── */
     .fi {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(12px);
     }
 
     .fi.visible {
