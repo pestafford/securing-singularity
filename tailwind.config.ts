@@ -9,28 +9,29 @@ export default {
 		extend: {
 			colors: {
 				primary: {
-					DEFAULT: '#1EAEDB',
-					dark: '#1795BD',
-					light: '#4DC4E6',
+					DEFAULT: '#2A9D8F',
+					dark: '#237B71',
+					light: '#3AB5A5',
 				},
 				secondary: {
-					DEFAULT: '#0A2540',
-					light: '#1E3A5F',
+					DEFAULT: '#1A1D1B',
+					light: '#232724',
 				},
 				accent: {
-					teal: '#14B8A6',
+					teal: '#2A9D8F',
+					warm: '#C4956A',
 				},
 				dark: {
-					DEFAULT: '#111111',
-					card: '#252525',
-					hover: '#383838',
-					border: '#383838',
-					subtle: '#1A1A1A',
+					DEFAULT: '#1A1D1B',
+					card: '#232724',
+					hover: '#353a37',
+					border: 'rgba(134, 131, 120, 0.15)',
+					subtle: '#232724',
 				},
 				text: {
-					primary: '#F5F5F5',
-					secondary: '#B0B0B0',
-					muted: '#808080',
+					primary: '#E0DDD4',
+					secondary: '#868378',
+					muted: '#5a5750',
 				},
 				surface: {
 					DEFAULT: 'var(--color-bg)',
@@ -47,21 +48,25 @@ export default {
 				muted: 'var(--color-text-muted)',
 			},
 			fontFamily: {
+				display: [
+					'Josefin Sans',
+					'sans-serif',
+				],
 				mono: [
-					'IBM Plex Mono',
+					'JetBrains Mono',
 					'monospace',
 				],
 				sans: [
-					'IBM Plex Sans',
+					'Work Sans',
 					'system-ui',
 					'sans-serif',
 				],
 			},
 			backgroundImage: {
-				'gradient-primary': 'linear-gradient(135deg, #1EAEDB 0%, #14B8A6 100%)',
-				'gradient-teal': 'linear-gradient(135deg, #14B8A6 0%, #1EAEDB 100%)',
-				'gradient-dark': 'linear-gradient(180deg, #111111 0%, #1A1A1A 100%)',
-				'gradient-dark-card': 'linear-gradient(180deg, #1A1A1A 0%, #252525 100%)',
+				'gradient-primary': 'linear-gradient(135deg, #2A9D8F 0%, #C4956A 100%)',
+				'gradient-teal': 'linear-gradient(135deg, #2A9D8F 0%, #3AB5A5 100%)',
+				'gradient-dark': 'linear-gradient(180deg, #1A1D1B 0%, #232724 100%)',
+				'gradient-dark-card': 'linear-gradient(180deg, #232724 0%, #2C312E 100%)',
 			},
 		}
 	},

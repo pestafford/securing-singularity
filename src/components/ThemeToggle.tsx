@@ -26,7 +26,7 @@ const ThemeToggle = () => {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      className="text-body hover:text-[#1EAEDB] transition-colors p-2 rounded-md"
+      className="text-body hover:text-primary transition-colors p-2 rounded-md"
     >
       {theme === 'dark' ? (
         // Sun icon

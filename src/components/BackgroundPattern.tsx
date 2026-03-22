@@ -15,8 +15,8 @@ const BackgroundPattern = ({
       <div className={`absolute inset-0 pointer-events-none ${className}`} style={{ opacity }}>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="20" cy="20" r="2" fill="currentColor" />
+            <pattern id="dots" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+              <circle cx="24" cy="24" r="2" fill="currentColor" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dots)" />
@@ -30,8 +30,8 @@ const BackgroundPattern = ({
       <div className={`absolute inset-0 pointer-events-none ${className}`} style={{ opacity }}>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
+            <pattern id="grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" strokeWidth="1"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
