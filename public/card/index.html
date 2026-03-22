@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Phil Stafford | Scan to Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    /* Top accent bar */
+    .bar {
+      width: 100%;
+      height: 3px;
+      background: #ff4d00;
+      margin-bottom: 40px;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ff4d00;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+    }
+
+    .qr-frame {
+      background: #f0f0f0;
+      padding: 16px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .qr-frame img {
+      width: 220px;
+      height: 220px;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    .scan-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #666666;
+      margin-bottom: 32px;
+    }
+
+    .url {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: #666666;
+      margin-bottom: 32px;
+    }
+
+    .url a {
+      color: #a0a0a0;
+      text-decoration: none;
+      border-bottom: 1px solid #333333;
+    }
+
+    .divider {
+      width: 40px;
+      height: 3px;
+      background: #f0f0f0;
+      margin: 0 auto 24px;
+    }
+
+    .org {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #666666;
+    }
+
+    .org a {
+      color: #666666;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bar"></div>
+    <div class="name">Phil Stafford</div>
+    <div class="role">AI Security Architect</div>
+    <div class="qr-frame">
+      <img src="/card/qr.png" alt="QR code — securingthesingularity.com/contact" />
+    </div>
+    <div class="scan-label">Scan to connect</div>
+    <div class="url"><a href="https://securingthesingularity.com/contact">securingthesingularity.com/contact</a></div>
+    <div class="divider"></div>
+    <div class="org"><a href="https://securingthesingularity.com">Singularity Systems</a></div>
+  </div>
+</body>
+</html>
