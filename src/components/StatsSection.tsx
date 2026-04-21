@@ -8,13 +8,13 @@ interface StatItemProps {
 
 const StatItem = ({ number, label, icon }: StatItemProps) => (
   <div className="text-center group">
-    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-accent-teal flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
       {icon}
     </div>
-    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent-teal bg-clip-text text-transparent mb-2">
+    <div className="text-3xl md:text-4xl font-bold text-primary mb-2 font-mono">
       {number}
     </div>
-    <div className="text-body font-medium">{label}</div>
+    <div className="text-body font-medium text-sm">{label}</div>
   </div>
 );
 
@@ -43,7 +43,7 @@ const StatsSection = () => {
   return (
     <section className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold text-center mb-4 text-heading tracking-tight">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
           {title}
         </h2>
         <p className="text-center text-body mb-10 max-w-2xl mx-auto">

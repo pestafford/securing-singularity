@@ -5,74 +5,76 @@ export const siteContent = {
   // Company Information
   company: {
     name: "Singularity Systems",
-    tagline: "AI Security Architecture & Consulting",
+    tagline: "Agent Security Architecture",
     email: "contact@securingthesingularity.com",
-    description: "AI security architecture, tooling, and strategy — built by practitioners who build the tools.",
+    phone: "(510) 214-3249",
+    phoneHref: "tel:+15102143249",
+    description: "Agent security architecture, review, and tooling — built by a practitioner who ships security tools.",
     bookingUrl: "https://calendly.com/phil-securingthesingularity/30min",
   },
 
   // Hero Section
   hero: {
-    title: "AI Security Architecture & Consulting",
-    subtitle: "We design secure AI systems, build security tooling, and help organizations deploy AI safely — grounded in hands-on experience building platforms like ThinkTank and Credence.",
-    ctaPrimary: "Book Free Assessment",
+    title: "Can you trust your agents in production?",
+    subtitle: "Architecture, review, and hardening for autonomous AI — MCP, skills, tools, multi-agent systems. Led by the engineer behind ThinkTank and Credence.",
+    ctaPrimary: "Book a 30-min assessment",
     ctaSecondary: "Learn More",
   },
 
   // Value Proposition Banner
   valueProp: {
-    headline: "Securing AI Systems From the Inside Out",
-    description: "We build AI security tools, so we understand the attack surface firsthand. Singularity Systems helps organizations adopt AI with confidence through architecture, tooling, and strategy.",
+    headline: "Agent Security Architecture",
+    description: "We build agent security tools, so we understand the attack surface firsthand. Singularity Systems helps organizations deploy autonomous AI with confidence — architecture, review, and hardening across MCP, skills, tools, and multi-agent workflows.",
   },
 
   // News Banner
   newsBanner: {
     text: "Watch our latest talk:",
-    highlight: "MLOps Conference — Agents in Production",
+    highlight: "Simply Cyber Firesides — What You Need to Know About AI",
     link: "#news",
   },
 
   // Mission Section
   mission: {
     title: "Our Mission",
-    description: "To help organizations adopt AI securely through hands-on architecture, purpose-built tooling, and practical strategy. Led by Phil Stafford, we combine deep technical expertise with real-world experience building AI security platforms.",
+    description: "To help organizations deploy autonomous AI securely through hands-on architecture, purpose-built tooling, and practical strategy. Led by Phil Stafford, we combine deep technical expertise with real-world experience building agent security platforms.",
     cta: "Meet Our Founder",
   },
 
   // Services Section
   services: {
     title: "Our Services",
-    subtitle: "AI security architecture, tooling, and strategy — built by practitioners",
+    subtitle: "Agent security architecture, review, and strategy — built by a practitioner",
     items: [
       {
-        title: "AI Security Architecture",
+        title: "Agent Security Architecture",
         icon: "Shield",
         description: [
-          "Threat modeling for AI/ML pipelines",
-          "Secure design for LLM applications",
-          "AI deployment security review",
+          "Threat modeling for agentic pipelines",
+          "Secure design for LLM and agent applications",
+          "Agent deployment security review",
         ],
       },
       {
-        title: "AI Agent & MCP Security",
+        title: "Multi-Agent & Tool Security",
         icon: "Brain",
         description: [
           "Security analysis for autonomous agents",
-          "MCP server verification & trust scoring via Credence",
+          "MCP, skill, and tool-use verification via Credence",
           "Agent trust frameworks",
         ],
       },
       {
-        title: "AI Security Strategy",
+        title: "Agent Security Strategy",
         icon: "LineChart",
         description: [
-          "AI risk assessments & governance",
-          "Frameworks for safe AI adoption",
-          "Security roadmaps for AI-forward orgs",
+          "Agent risk assessments & governance",
+          "Frameworks for safe agent adoption",
+          "Security roadmaps for agent-forward orgs",
         ],
       },
     ],
-    ctaPrimary: "Book Free Assessment",
+    ctaPrimary: "See if we're a fit",
   },
 
   // Litmus Methodology Section
@@ -114,12 +116,12 @@ export const siteContent = {
 
   // Stats Section
   stats: {
-    title: "Built and Proven in Production",
+    title: "By the Numbers",
     subtitle: "Real tools, real analysis, real results",
     items: [
       { number: "15+", label: "Years in IT & Security" },
       { number: "60+", label: "Repositories Analyzed" },
-      { number: "26", label: "MCP Servers Assessed via Credence" },
+      { number: "2", label: "Security Platforms Shipped" },
       { number: "14+", label: "Vulnerabilities Discovered" },
     ],
   },
@@ -127,14 +129,14 @@ export const siteContent = {
   // Team Section
   team: {
     title: "Meet Our Leadership",
-    subtitle: "AI security architecture backed by 15+ years in IT and security",
-    cta: "Book a Conversation",
+    subtitle: "Agent security architecture backed by 15+ years in IT and security",
+    cta: "Talk to Phil",
     members: [
       {
         name: "Phil Stafford",
         title: "Founder & Principal Consultant",
         image: "/lovable-uploads/BlueShirt.PNG",
-        bio: "Phil Stafford is an AI security architect with over 15 years of experience in IT and security. He builds tools like ThinkTank — a multi-agent system for automated security analysis of AI repositories — and Credence, a trust and verification registry for MCP servers. Phil combines hands-on engineering with strategic consulting to help organizations deploy AI securely.",
+        bio: "Phil Stafford is an agent security architect with over 15 years of experience in IT and security. He builds tools like ThinkTank — a multi-agent system for automated security analysis of AI repositories — and Credence, a trust and verification registry for MCP, skills, and other agent tooling. Phil combines hands-on engineering with strategic consulting to help organizations deploy autonomous AI securely.",
         social: {
           linkedin: "http://www.linkedin.com/in/phillipstafford",
           github: "https://github.com/pestafford",
@@ -148,36 +150,41 @@ export const siteContent = {
   // Why Choose Us Section
   whyChooseUs: {
     title: "Why Choose Us",
-    subtitle: "AI security expertise backed by real tools and real results",
+    subtitle: "Agent security expertise backed by real tools and real results",
     items: [
       {
-        title: "Hands-On Builder",
+        title: "Builder, Not Consultant",
         icon: "Award",
-        description: "Built ThinkTank (multi-agent security analysis) and Credence (MCP server security registry)",
+        description: "Ships security tooling. ThinkTank and Credence are real products, not slide decks.",
       },
       {
-        title: "Deep AI Expertise",
+        title: "Agent-Focused",
         icon: "AlertCircle",
-        description: "Built multi-agent analysis systems; understands AI attack surfaces from the inside",
+        description: "Specialized on MCP, skills, tool-use, multi-agent orchestration — not a generalist.",
       },
       {
         title: "Research-Driven",
         icon: "BookOpen",
-        description: "Conference speaker (MLOps, CyberLab Con) with active thought leadership",
+        description: "Speaker at MLOps Community, Simply Cyber, CyberLab Con with active publishing.",
       },
       {
         title: "Practical Focus",
         icon: "CheckCircle2",
-        description: "Real vulnerabilities found, real tools deployed — not theoretical frameworks",
+        description: "Real vulnerabilities found, real tools deployed — not theoretical frameworks.",
       },
     ],
-    cta: "Book Free Assessment",
+    cta: "Book a 30-min call",
   },
 
   // Featured At Section
   featuredAt: {
     title: "Featured At",
     items: [
+      {
+        name: "Simply Cyber",
+        image: "https://static.wixstatic.com/media/6108bc_c901a4d1efdf4dae8343634f4c157600~mv2.png/v1/crop/x_0,y_543,w_2000,h_913/fill/w_143,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2005SubsSCLogo%20.png",
+        link: "https://www.youtube.com/live/YFbGLA6a3NM",
+      },
       {
         name: "MLOps Community",
         image: "https://unita.co/wp-content/uploads/2022/06/mlops-community-logo.jpg",
@@ -191,11 +198,74 @@ export const siteContent = {
     ],
   },
 
+  // Recent Work Section
+  recentWork: {
+    title: "Recent Work",
+    subtitle: "Tools shipped, research published — real artifacts, not slide decks",
+    items: [
+      {
+        type: "Tool",
+        title: "ThinkTank",
+        summary: "Multi-agent security analysis platform. Five-agent deliberation (believer, skeptic, neutral + two) produces structured dissent instead of consensus — surfaces risks single-agent reviewers miss.",
+        link: null,
+      },
+      {
+        type: "Tool",
+        title: "Credence",
+        summary: "Trust and verification registry for MCP servers, skills, and other agent tooling. Pre-action trust assessment — answers 'should this entity be trusted?' before the agent acts.",
+        link: "https://credence.securingthesingularity.com",
+      },
+      {
+        type: "Article",
+        title: "The Agentic AI Polka",
+        summary: "Field notes from a security expo — cutting through AI security marketing to what's genuinely shipping vs. slideware.",
+        date: "April 2026",
+        link: "https://medium.com/@pe.stafford/the-agentic-ai-polka-8bcda6eca3c4",
+      },
+      {
+        type: "Article",
+        title: "Oura Ring MCP Supply Chain Attack",
+        summary: "A cloned Oura MCP server poisoned the supply chain — no technical exploit, just missing provenance. The verification gap in MCP, and how to close it.",
+        date: "Feb 2026",
+        link: "https://medium.com/@pe.stafford/someone-cloned-an-oura-ring-mcp-server-and-poisoned-the-supply-chain-we-can-fix-this-931acfaac8e3",
+      },
+      {
+        type: "Article",
+        title: "How to Steal an AI Without Breaking In",
+        summary: "How foreign labs replicated Claude-level capability through legitimate API access — and why your API rate limits aren't a security control.",
+        date: "Feb 2026",
+        link: "https://medium.com/@pe.stafford/how-to-steal-an-ai-without-breaking-in-ca0d9d951705",
+      },
+      {
+        type: "Article",
+        title: "Poisoned Pipelines",
+        summary: "The AI supply chain attack that doesn't crash anything — legacy dependencies in MCP tools carrying risk that modern scanners don't flag.",
+        date: "Jan 2026",
+        link: "https://medium.com/@pe.stafford/poisoned-pipelines-the-ai-supply-chain-attack-that-doesnt-crash-anything-93d4a665239e",
+      },
+    ],
+    cta: "Read more on Medium",
+    ctaLink: "https://medium.com/@pe.stafford",
+  },
+
   // News Section
   news: {
     title: "News & Announcements",
     subtitle: "Past speaking engagements and industry events",
     items: [
+      {
+        title: "Simply Cyber Firesides: What You Need to Know About AI",
+        image: "https://static.wixstatic.com/media/6108bc_c901a4d1efdf4dae8343634f4c157600~mv2.png/v1/crop/x_0,y_543,w_2000,h_913/fill/w_143,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2005SubsSCLogo%20.png",
+        description: "Phil Stafford joined host Gerald Auger, Ph.D. on Simply Cyber Firesides to break down what cybersecurity practitioners actually need to understand about AI — from validation frameworks to multi-agent systems to adopting AI securely and effectively.",
+        details: [
+          { label: "Date", value: "April 16, 2026" },
+          { label: "Format", value: "LinkedIn Live / YouTube Live" },
+          { label: "Host", value: "Gerald Auger, Ph.D. — Simply Cyber" },
+        ],
+        links: {
+          recording: "https://www.youtube.com/live/YFbGLA6a3NM",
+        },
+      },
       {
         title: "MLOps Conference: Agents in Production",
         image: "https://unita.co/wp-content/uploads/2022/06/mlops-community-logo.jpg",
@@ -225,9 +295,9 @@ export const siteContent = {
 
   // Contact Section
   contact: {
-    title: "Ready to Secure Your AI Systems?",
-    subtitle: "Book a free 30-minute assessment to discuss your AI security needs — from architecture review to deployment strategy.",
-    cta: "Book Free Assessment",
+    title: "Ready to Secure Your Agents?",
+    subtitle: "Book a 30-minute assessment to discuss your agent security needs — from architecture review to deployment strategy.",
+    cta: "Book a 30-min assessment",
     email: "contact@securingthesingularity.com",
   },
 

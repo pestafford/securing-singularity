@@ -19,23 +19,23 @@
   --color-border: rgba(107, 102, 94, 0.15);
   --color-border-hover: rgba(107, 102, 94, 0.30);
   --color-text-primary: #1E1E1C;
-  --color-text-secondary: #6B665E;
-  --color-text-muted: #9A9590;
+  --color-text-secondary: #5A554E;
+  --color-text-muted: #7A756E;
   --color-accent: #2A7A6E;
   --color-accent2: #8B5E3C;
 }
 
 .dark {
   /* Dark mode — Teal Anvil */
-  --color-bg: #1A1D1B;
-  --color-bg-card: #232724;
-  --color-bg-subtle: #232724;
-  --color-bg-elevated: #2C312E;
-  --color-border: rgba(134, 131, 120, 0.15);
-  --color-border-hover: rgba(134, 131, 120, 0.30);
+  --color-bg: #121413;
+  --color-bg-card: #1A1D1B;
+  --color-bg-subtle: #1A1D1B;
+  --color-bg-elevated: #232724;
+  --color-border: rgba(134, 131, 120, 0.20);
+  --color-border-hover: rgba(134, 131, 120, 0.35);
   --color-text-primary: #E0DDD4;
-  --color-text-secondary: #868378;
-  --color-text-muted: #5a5750;
+  --color-text-secondary: #B8B4AA;
+  --color-text-muted: #9A968D;
   --color-accent: #2A9D8F;
   --color-accent2: #C4956A;
 }

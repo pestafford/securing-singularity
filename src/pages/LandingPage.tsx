@@ -1,4 +1,4 @@
-import { Shield, Lock, LineChart, Brain, BookOpen, AlertCircle, Award, CheckCircle2, Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import BackgroundPattern from "../components/BackgroundPattern";
 import StatsSection from "../components/StatsSection";
@@ -39,9 +39,14 @@ const LandingPage = () => {
       <div className="flex items-center gap-2">
         <a href="/" className="flex items-center gap-2 group">
           <img
-            src="/lovable-uploads/LogoStylizedSmall.png"
+            src="/lovable-uploads/LogoStylized.png"
             alt={`${siteContent.company.name} Logo`}
-            style={{ display: 'block' }}
+            className="block dark:hidden h-14 md:h-20 w-auto"
+          />
+          <img
+            src="/lovable-uploads/LogoStylizedWhite.png"
+            alt={`${siteContent.company.name} Logo`}
+            className="hidden dark:block h-14 md:h-20 w-auto"
           />
           <h1 className="text-xl md:text-2xl font-display uppercase tracking-[2px] group-hover:underline">
             <span className="font-bold text-heading">SINGULARITY</span>{' '}
@@ -56,11 +61,26 @@ const LandingPage = () => {
         <a href="#about" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide">About</a>
         <a href="#contact" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide">Contact</a>
         <ThemeToggle />
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors font-mono text-sm">Book Free Assessment</a>
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors font-mono text-sm">Book a 30-min assessment</a>
       </nav>
 
       {/* Mobile Menu Button */}
-      <div className="flex items-center gap-2 md:hidden">
+      <div className="flex items-center gap-1 md:hidden">
+        <a
+          href={siteContent.company.phoneHref}
+          className="text-body hover:text-primary transition-colors p-2"
+          aria-label={`Call ${siteContent.company.phone}`}
+        >
+          <Phone className="w-5 h-5" />
+        </a>
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary hover:bg-primary-dark text-white px-3 py-1.5 rounded-md transition-colors font-mono text-xs whitespace-nowrap"
+        >
+          Book
+        </a>
         <ThemeToggle />
         <button
           className="text-body hover:text-primary transition-colors p-2"
@@ -117,7 +137,7 @@ const LandingPage = () => {
                 className="bg-primary hover:bg-primary-dark text-white px-4 py-3 rounded-md transition-colors text-center text-lg font-semibold mt-4 font-mono"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Book Free Assessment
+                Book a 30-min assessment
               </a>
             </div>
           </nav>
@@ -171,11 +191,6 @@ const LandingPage = () => {
       <div className="relative z-10">
         <Banner />
 
-        {/* News Announcement Strip */}
-        <a href="#news" className="block bg-primary hover:bg-primary-dark text-white text-center py-2 px-4 text-sm font-medium transition-colors hover:opacity-90">
-          <span>{siteContent.newsBanner.text} <span className="font-bold">{siteContent.newsBanner.highlight}</span> &rarr;</span>
-        </a>
-
         {/* Hero Section — First real content */}
         <section className="relative py-10 md:py-16 px-2 md:px-6">
           <div className="max-w-5xl mx-auto bg-surface-elevated rounded-md shadow-lg p-6 md:p-10 border border-border-theme border-l-[3px] border-l-primary">
@@ -188,64 +203,90 @@ const LandingPage = () => {
                 <p className="text-lg md:text-xl text-body mb-6 md:mb-8 leading-relaxed">
                   {siteContent.hero.subtitle}
                 </p>
-                <div className="flex gap-3 md:gap-4">
-                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:shadow-lg hover:scale-105">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
+                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:shadow-lg hover:scale-105 inline-block text-center">
                     {siteContent.hero.ctaPrimary}
                   </a>
-                  <button className="border-2 border-border-theme hover:border-primary hover:bg-primary/10 text-heading px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:scale-105" onClick={() => { window.location.hash = '#services'; }}>
-                    {siteContent.hero.ctaSecondary}
-                  </button>
+                  <a href="#services" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide underline-offset-4 hover:underline">
+                    {siteContent.hero.ctaSecondary} &rarr;
+                  </a>
                 </div>
+                <p className="text-muted font-mono text-xs tracking-wider mt-3 uppercase">
+                  30 min &middot; no obligation
+                </p>
               </div>
               <div className="flex justify-center md:justify-end md:pr-6 lg:pr-10">
                 <img
                   src="/lovable-uploads/OfficeAstronaut.jpeg"
                   alt="Astronaut working at a desk in a modern office, symbolizing secure AI innovation"
                   loading="lazy"
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-md object-cover shadow-lg border-2 border-border-theme bg-surface-elevated animate-float"
-                  style={{ objectPosition: 'center', boxShadow: '0 2px 24px 0 rgba(42,157,143,0.18)' }}
+                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-md object-cover shadow-lg border-2 border-border-theme bg-surface-elevated"
+                  style={{
+                    objectPosition: 'center',
+                    boxShadow: '0 2px 24px 0 rgba(42,157,143,0.18)',
+                    filter: 'grayscale(0.7) contrast(1.05) saturate(0.8)',
+                  }}
                 />
               </div>
             </div>
           </div>
         </section>
 
+        {/* Featured At Section */}
+        <section className="py-8 md:py-10 px-2 md:px-6 bg-surface border-y border-border-theme">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-muted text-sm font-mono tracking-widest uppercase mb-6">{siteContent.featuredAt.title}</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {siteContent.featuredAt.items.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity group"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-border-theme"
+                  />
+                  <span className="text-body font-medium text-sm md:text-base group-hover:text-primary transition-colors">{item.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <StatsSection />
+
         {/* Services Section */}
         <section id="services" className="py-12 md:py-16 px-2 md:px-6 bg-surface relative overflow-hidden">
           <BackgroundPattern variant="dots" opacity={0.03} className="text-primary" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
               {siteContent.services.title}
             </h2>
             <p className="text-center text-body mb-8 max-w-2xl mx-auto">{siteContent.services.subtitle}</p>
             <ul className="grid md:grid-cols-3 gap-6 md:gap-8 list-none">
-              {siteContent.services.items.map((service, index) => {
-                const iconMap: Record<string, any> = {
-                  Lock: Lock,
-                  Shield: Shield,
-                  LineChart: LineChart,
-                  Brain: Brain,
-                };
-                const Icon = iconMap[service.icon] || Shield;
-                const gradients = [
-                  'from-primary to-accent-teal',
-                  'from-accent-teal to-primary',
-                  'from-primary-dark to-accent-teal',
-                ];
-                return (
-                  <li key={index} className="p-6 hover:shadow-2xl transition-all duration-300 rounded-md border border-border-theme border-l-[3px] border-l-primary flex flex-col items-center text-center bg-surface-card hover:-translate-y-1 group">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-8 h-8 text-white" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-heading">{service.title}</h3>
-                    <ul className="text-body text-base list-disc list-inside mb-2">
-                      {service.description.map((item, itemIndex) => (
-                        <li key={itemIndex}>{item}</li>
-                      ))}
-                    </ul>
-                  </li>
-                );
-              })}
+              {siteContent.services.items.map((service, index) => (
+                <li key={index} className="p-6 hover:shadow-2xl transition-all duration-300 rounded-md border border-border-theme border-l-[3px] border-l-primary flex flex-col bg-surface-card hover:-translate-y-1 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="font-mono text-xs font-bold text-primary tracking-wider">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-display font-bold text-heading uppercase tracking-wide text-base">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <ul className="text-body text-base list-disc list-inside space-y-1">
+                    {service.description.map((item, itemIndex) => (
+                      <li key={itemIndex}>{item}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
             </ul>
             <div className="text-center mt-8">
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.services.ctaPrimary}</a>
@@ -286,39 +327,10 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <StatsSection />
-
-        {/* Featured At Section */}
-        <section className="py-8 md:py-10 px-2 md:px-6 bg-surface border-y border-border-theme">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-center text-muted text-sm font-mono tracking-widest uppercase mb-6">{siteContent.featuredAt.title}</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {siteContent.featuredAt.items.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity group"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-border-theme"
-                  />
-                  <span className="text-body font-medium text-sm md:text-base group-hover:text-primary transition-colors">{item.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Team Section */}
         <section id="about" className="py-12 md:py-16 px-2 md:px-6 bg-gradient-to-br from-primary to-primary-dark">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white">
               {siteContent.team.title}
             </h2>
             <p className="text-center text-white/90 mb-10 max-w-2xl mx-auto">{siteContent.team.subtitle}</p>
@@ -335,35 +347,27 @@ const LandingPage = () => {
         <section className="py-12 md:py-16 px-2 md:px-6 bg-secondary relative overflow-hidden">
           <BackgroundPattern variant="grid" opacity={0.05} className="text-white" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white">
               {siteContent.whyChooseUs.title}
             </h2>
             <p className="text-center text-primary-light mb-10 max-w-2xl mx-auto">{siteContent.whyChooseUs.subtitle}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {siteContent.whyChooseUs.items.map((item, index) => {
-                const iconMap: Record<string, any> = {
-                  Award: Award,
-                  AlertCircle: AlertCircle,
-                  CheckCircle2: CheckCircle2,
-                  BookOpen: BookOpen,
-                };
-                const Icon = iconMap[item.icon] || Award;
-                const gradients = [
-                  'from-primary to-accent-teal',
-                  'from-accent-teal to-primary',
-                  'from-primary-dark to-accent-teal',
-                  'from-accent-teal to-primary-dark',
-                ];
-                return (
-                  <div key={index} className="text-center group">
-                    <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-10 h-10 text-white" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
-                    <p className="text-primary-light/80">{item.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {siteContent.whyChooseUs.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-secondary-light/50 rounded-md border border-white/10 border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="font-mono text-xs font-bold text-primary tracking-wider">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-display font-bold text-white uppercase tracking-wide text-sm">
+                      {item.title}
+                    </h3>
                   </div>
-                );
-              })}
+                  <p className="text-primary-light/80 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              ))}
             </div>
             <div className="text-center mt-10">
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.whyChooseUs.cta}</a>
@@ -371,10 +375,63 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* Recent Work Section */}
+        <section className="py-12 md:py-16 px-2 md:px-6 bg-surface">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+              {siteContent.recentWork.title}
+            </h2>
+            <p className="text-center text-body mb-10 max-w-2xl mx-auto">{siteContent.recentWork.subtitle}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {siteContent.recentWork.items.map((item, index) => {
+                const CardWrapper = item.link ? 'a' : 'div';
+                const wrapperProps = item.link
+                  ? { href: item.link, target: '_blank', rel: 'noopener noreferrer' }
+                  : {};
+                return (
+                  <CardWrapper
+                    key={index}
+                    {...wrapperProps}
+                    className="bg-surface-card rounded-md border border-border-theme border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform flex flex-col group"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span
+                        className="font-mono text-xs font-bold tracking-wider uppercase"
+                        style={{ color: item.type === 'Tool' ? 'var(--color-accent2)' : 'var(--color-accent)' }}
+                      >
+                        {item.type}
+                      </span>
+                      {item.date && (
+                        <span className="font-mono text-xs text-muted tracking-wider">
+                          · {item.date}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-display font-bold text-heading uppercase tracking-wide text-base mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-body text-sm leading-relaxed flex-grow">{item.summary}</p>
+                    {item.link && (
+                      <span className="text-primary font-mono text-xs tracking-wider mt-3 group-hover:underline underline-offset-4">
+                        Read &rarr;
+                      </span>
+                    )}
+                  </CardWrapper>
+                );
+              })}
+            </div>
+            <div className="text-center mt-10">
+              <a href={siteContent.recentWork.ctaLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light font-mono text-sm tracking-wide underline-offset-4 hover:underline">
+                {siteContent.recentWork.cta} &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* News Section */}
         <section id="news" className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
               {siteContent.news.title}
             </h2>
             <p className="text-center text-body mb-8 max-w-2xl mx-auto">{siteContent.news.subtitle}</p>
@@ -408,9 +465,9 @@ const LandingPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-16 px-2 md:px-6 bg-gradient-to-br from-secondary via-secondary-light to-primary">
+        <section id="contact" className="py-12 md:py-16 px-2 md:px-6 bg-secondary">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] mb-6 text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] mb-6 text-white">
               {siteContent.contact.title}
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
@@ -422,6 +479,14 @@ const LandingPage = () => {
               </a>
               <a href={`mailto:${siteContent.contact.email}`} className="text-white/80 hover:text-white transition-colors text-sm font-mono">
                 or email {siteContent.contact.email}
+              </a>
+            </div>
+            <p className="text-white/60 font-mono text-xs tracking-wider mt-3 uppercase">
+              30 min &middot; no obligation
+            </p>
+            <div className="mt-4">
+              <a href={siteContent.company.phoneHref} className="text-white/80 hover:text-white transition-colors text-sm font-mono">
+                or call {siteContent.company.phone}
               </a>
             </div>
           </div>
@@ -444,6 +509,11 @@ const LandingPage = () => {
             <div className="md:text-right">
               <h3 className="text-lg font-semibold mb-4 font-display uppercase tracking-[1px]">Contact</h3>
               <p className="text-muted">{siteContent.company.email}</p>
+              <p className="text-muted mt-1">
+                <a href={siteContent.company.phoneHref} className="hover:text-primary transition-colors">
+                  {siteContent.company.phone}
+                </a>
+              </p>
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary hover:underline font-semibold">Book a Call</a>
             </div>
           </div>
