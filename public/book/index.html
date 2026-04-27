@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a 30-min assessment | Singularity Systems</title>
+  <meta name="description" content="Book a 30-minute agent security assessment with Phil Stafford — Singularity Systems." />
+
+  <meta property="og:title" content="Book a 30-min assessment | Singularity Systems" />
+  <meta property="og:description" content="Book a 30-minute agent security assessment with Phil Stafford — Singularity Systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://securingthesingularity.com/book" />
+  <meta property="og:image" content="https://securingthesingularity.com/lovable-uploads/Singularity%20Poster.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book a 30-min assessment | Singularity Systems" />
+  <meta name="twitter:description" content="Book a 30-minute agent security assessment with Phil Stafford — Singularity Systems." />
+  <meta name="twitter:image" content="https://securingthesingularity.com/lovable-uploads/Singularity%20Poster.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Work+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #121413;
+      --bg-elevated: #232724;
+      --bg-surface: #1A1D1B;
+      --border: rgba(134, 131, 120, 0.20);
+      --border-accent: rgba(42, 157, 143, 0.25);
+      --text-1: #E0DDD4;
+      --text-2: #B8B4AA;
+      --text-3: #9A968D;
+      --accent: #2A9D8F;
+      --accent2: #C4956A;
+      --accent-line: rgba(42, 157, 143, 0.10);
+      --display: 'Josefin Sans', sans-serif;
+      --sans: 'Work Sans', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', monospace;
+    }
+
+    [data-theme="light"] {
+      --bg: #F2EDE5;
+      --bg-elevated: #FFFFFF;
+      --bg-surface: #FAF7F2;
+      --border: rgba(107, 102, 94, 0.15);
+      --border-accent: rgba(42, 122, 110, 0.20);
+      --text-1: #1E1E1C;
+      --text-2: #5A554E;
+      --text-3: #7A756E;
+      --accent: #2A7A6E;
+      --accent2: #8B5E3C;
+      --accent-line: rgba(42, 122, 110, 0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-1);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        linear-gradient(var(--accent-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-line) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    /* ───── HEADER ───── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-1);
+    }
+
+    .brand img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+
+    .brand-name .light { font-weight: 300; color: var(--text-3); }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      padding: 8px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ───── HERO ───── */
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .lede {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.55;
+      max-width: 60ch;
+    }
+
+    .micro {
+      margin-top: 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ───── CALENDLY ───── */
+    .calendly-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 8px;
+      margin-bottom: 36px;
+      overflow: hidden;
+    }
+
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: clamp(720px, 90vh, 1000px);
+    }
+
+    @media (max-width: 640px) {
+      .calendly-inline-widget { height: clamp(820px, 95vh, 1100px); }
+    }
+
+    /* ───── FALLBACK CHANNELS ───── */
+    .fallback {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+      margin-bottom: 36px;
+    }
+
+    @media (min-width: 560px) {
+      .fallback { grid-template-columns: 1fr 1fr; }
+    }
+
+    .fallback a {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-1);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .fallback a:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .fallback .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .fallback .value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* ───── FOOTER ───── */
+    footer {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text-3);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    footer a:hover { color: var(--accent); border-color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <a class="brand" href="/">
+        <img src="/lovable-uploads/LogoStylizedWhite.png" alt="Singularity Systems" id="brand-logo" />
+        <span class="brand-name"><strong>SINGULARITY</strong> <span class="light">SYSTEMS</span></span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Agent Security Architecture</div>
+      <h1>Book a 30-min assessment</h1>
+      <p class="lede">
+        Pick a time and we'll talk through your agent security situation —
+        what you're deploying, what's keeping you up, where the
+        architecture is fragile. No pitch, no obligation. If we're a fit
+        we'll talk scope; if not, you'll leave with a sharper read.
+      </p>
+      <div class="micro">30 min &middot; no obligation</div>
+    </section>
+
+    <div class="calendly-card">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/phil-securingthesingularity/30min?hide_gdpr_banner=1"></div>
+    </div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>
+      // Calendly broadcasts page_height events for some embed flavors.
+      // When it does, snap the wrapper to the iframe's actual content height.
+      window.addEventListener('message', function (e) {
+        if (typeof e.data !== 'object' || !e.data || typeof e.data.event !== 'string') return;
+        if (!e.data.event.startsWith('calendly.')) return;
+        if (e.data.event === 'calendly.page_height' && e.data.payload && e.data.payload.height) {
+          var w = document.querySelector('.calendly-inline-widget');
+          if (w) w.style.height = e.data.payload.height;
+        }
+      });
+    </script>
+
+    <div class="fallback">
+      <a href="tel:+15102143249">
+        <span class="label">Call</span>
+        <span class="value">(510) 214-3249</span>
+      </a>
+      <a href="mailto:contact@securingthesingularity.com">
+        <span class="label">Email</span>
+        <span class="value">contact@securingthesingularity.com</span>
+      </a>
+    </div>
+
+    <footer>
+      <a href="/">securingthesingularity.com</a>
+      <span>Singularity Systems</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const stored = localStorage.getItem('theme');
+      const initial = (stored === 'light' || stored === 'dark')
+        ? stored
+        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      root.setAttribute('data-theme', initial);
+      updateUI(initial);
+
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateUI(next);
+      });
+
+      function updateUI(theme) {
+        document.getElementById('icon-sun').style.display = theme === 'dark' ? '' : 'none';
+        document.getElementById('icon-moon').style.display = theme === 'dark' ? 'none' : '';
+        const logo = document.getElementById('brand-logo');
+        logo.src = theme === 'dark'
+          ? '/lovable-uploads/LogoStylizedWhite.png'
+          : '/lovable-uploads/LogoStylized.png';
+      }
+    })();
+  </script>
+</body>
+</html>
