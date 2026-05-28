@@ -114,18 +114,6 @@ export const siteContent = {
     footnote: "Our assessment approach draws on emerging standards including ISO 42001, AIUC-1, and SOC 2, and on peer-reviewed behavioral research.",
   },
 
-  // Stats Section
-  stats: {
-    title: "By the Numbers",
-    subtitle: "Real tools, real analysis, real results",
-    items: [
-      { number: "15+", label: "Years in IT & Security" },
-      { number: "60+", label: "Repositories Analyzed" },
-      { number: "2", label: "Security Platforms Shipped" },
-      { number: "14+", label: "Vulnerabilities Discovered" },
-    ],
-  },
-
   // Team Section
   team: {
     title: "Meet Our Leadership",

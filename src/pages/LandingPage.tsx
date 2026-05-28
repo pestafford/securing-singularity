@@ -1,7 +1,6 @@
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import BackgroundPattern from "../components/BackgroundPattern";
-import StatsSection from "../components/StatsSection";
 import ThemeToggle from "../components/ThemeToggle";
 import { siteContent } from "../content/siteContent";
 
@@ -257,9 +256,6 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Stats Section */}
-        <StatsSection />
 
         {/* Services Section */}
         <section id="services" className="py-12 md:py-16 px-2 md:px-6 bg-surface relative overflow-hidden">
