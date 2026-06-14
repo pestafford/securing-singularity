@@ -195,8 +195,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="forge-specline mb-10 md:mb-14">
               <span>AI Security Consultancy</span>
-              <span className="hidden sm:inline">Architecture · Review · Hardening</span>
-              <span>Est. 2026</span>
+              <span>Architecture · Review · Hardening</span>
             </div>
             <div className="grid md:grid-cols-[1.55fr_0.7fr] gap-10 md:gap-14 items-center">
               <div>
