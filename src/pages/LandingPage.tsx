@@ -34,7 +34,7 @@ const LandingPage = () => {
 
   // Simple banner for the company logo area
   const Banner = () => (
-    <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8 bg-surface border-b border-border-theme">
+    <header className="flex justify-between items-center py-4 px-4 md:py-6 md:px-8 border-b border-border-theme">
       <div className="flex items-center gap-2">
         <a href="/" className="flex items-center gap-2 group">
           <img
@@ -56,11 +56,11 @@ const LandingPage = () => {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-6 md:gap-8">
-        <a href="#services" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide">Services</a>
-        <a href="#about" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide">About</a>
-        <a href="#contact" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide">Contact</a>
+        <a href="#services" className="forge-nav">Services</a>
+        <a href="#about" className="forge-nav">About</a>
+        <a href="#contact" className="forge-nav">Contact</a>
         <ThemeToggle />
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors font-mono text-sm">Book a 30-min assessment</a>
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">Book a 30-min assessment</a>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -76,7 +76,7 @@ const LandingPage = () => {
           href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary hover:bg-primary-dark text-white px-3 py-1.5 rounded-md transition-colors font-mono text-xs whitespace-nowrap"
+          className="forge-btn forge-btn-sm whitespace-nowrap"
         >
           Book
         </a>
@@ -190,42 +190,50 @@ const LandingPage = () => {
       <div className="relative z-10">
         <Banner />
 
-        {/* Hero Section — First real content */}
-        <section className="relative py-10 md:py-16 px-2 md:px-6">
-          <div className="max-w-5xl mx-auto bg-surface-elevated rounded-md shadow-lg p-6 md:p-10 border border-border-theme border-l-[3px] border-l-primary">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+        {/* Hero Section — editorial, open on the textured background */}
+        <section className="relative py-12 md:py-20 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="forge-specline mb-10 md:mb-14">
+              <span>AI Security Consultancy</span>
+              <span className="hidden sm:inline">Architecture · Review · Hardening</span>
+              <span>Est. 2026</span>
+            </div>
+            <div className="grid md:grid-cols-[1.55fr_0.7fr] gap-10 md:gap-14 items-center">
               <div>
-                <p className="text-sm font-mono font-semibold text-primary tracking-widest uppercase mb-3">{siteContent.valueProp.headline}</p>
-                <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-[1.5px] mb-4 md:mb-6 text-heading">
-                  {siteContent.hero.title}
+                <p className="forge-eyebrow mb-6"><span className="dot">&#9670;</span> {siteContent.valueProp.headline}</p>
+                <h1 className="font-display font-bold uppercase tracking-[-0.5px] leading-[0.95] text-heading text-4xl sm:text-5xl md:text-5xl lg:text-6xl mb-6">
+                  Can you trust<br />your agents <span className="hl">in production?</span>
                 </h1>
-                <p className="text-lg md:text-xl text-body mb-6 md:mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl text-body mb-8 leading-relaxed max-w-xl">
                   {siteContent.hero.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
-                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg text-base font-semibold transition-all hover:shadow-lg hover:scale-105 inline-block text-center">
+                <div className="flex flex-col sm:flex-row gap-5 sm:gap-7 sm:items-center">
+                  <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">
                     {siteContent.hero.ctaPrimary}
                   </a>
-                  <a href="#services" className="text-body hover:text-primary transition-colors font-mono text-sm tracking-wide underline-offset-4 hover:underline">
+                  <a href="#services" className="forge-link">
                     {siteContent.hero.ctaSecondary} &rarr;
                   </a>
                 </div>
-                <p className="text-muted font-mono text-xs tracking-wider mt-3 uppercase">
+                <p className="text-muted font-mono text-xs tracking-wider mt-4 uppercase">
                   30 min &middot; no obligation
                 </p>
               </div>
-              <div className="flex justify-center md:justify-end md:pr-6 lg:pr-10">
-                <img
-                  src="/lovable-uploads/OfficeAstronaut.jpeg"
-                  alt="Astronaut working at a desk in a modern office, symbolizing secure AI innovation"
-                  loading="lazy"
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-md object-cover shadow-lg border-2 border-border-theme bg-surface-elevated"
-                  style={{
-                    objectPosition: 'center',
-                    boxShadow: '0 2px 24px 0 rgba(42,157,143,0.18)',
-                    filter: 'grayscale(0.7) contrast(1.05) saturate(0.8)',
-                  }}
-                />
+              <div className="md:pt-1">
+                <div className="forge-plate p-3">
+                  <span className="brk"></span>
+                  <img
+                    src="/lovable-uploads/OfficeAstronaut.jpeg"
+                    alt="Astronaut working at a desk in a modern office, symbolizing secure AI innovation"
+                    loading="lazy"
+                    className="w-full aspect-square object-cover block"
+                    style={{ filter: 'grayscale(0.7) contrast(1.05) saturate(0.8)' }}
+                  />
+                </div>
+                <div className="forge-figcap">
+                  <span className="l">Fig. 01 &mdash; The Autonomy Era</span>
+                  <span>Secure by design</span>
+                </div>
               </div>
             </div>
           </div>
