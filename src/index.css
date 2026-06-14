@@ -222,3 +222,13 @@ html {
 .forge-plate .brk{position:absolute;bottom:12px;left:12px;width:15px;height:15px;border:1.6px solid var(--color-accent);border-right:0;border-top:0}
 .forge-figcap{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-text-muted)}
 .forge-figcap .l{color:var(--color-text-primary)}
+
+/* machined card — chamfer + accent spine + corner tick (theme-aware) */
+.forge-card{position:relative;background:var(--color-bg-card);border:1px solid var(--color-border);border-left:3px solid var(--color-accent);
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);transition:transform .15s}
+.forge-card:hover{transform:translateY(-2px)}
+.forge-card::after{content:"";position:absolute;bottom:9px;right:9px;width:9px;height:9px;border:1.5px solid var(--color-accent);opacity:.4;border-left:0;border-top:0;pointer-events:none}
+/* editorial section heading — left, with a solid rule */
+.forge-h2{font-family:'Josefin Sans',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.05;text-align:left;
+  font-size:clamp(22px,3.2vw,32px);color:var(--color-text-primary);border-bottom:2px solid var(--color-text-primary);padding-bottom:12px;margin-bottom:16px}
+.forge-sub{color:var(--color-text-secondary);max-width:60ch;margin-bottom:30px;font-size:15.5px;line-height:1.6;text-align:left}

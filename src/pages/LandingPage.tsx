@@ -133,7 +133,7 @@ const LandingPage = () => {
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary hover:bg-primary-dark text-white px-4 py-3 rounded-md transition-colors text-center text-lg font-semibold mt-4 font-mono"
+                className="forge-btn text-center mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book a 30-min assessment
@@ -149,7 +149,7 @@ const LandingPage = () => {
   const TeamMemberCard = () => {
     const member = siteContent.team.members[0];
     return (
-      <div className="p-5 md:p-6 hover:shadow-lg transition-shadow max-w-xs md:max-w-sm mx-auto bg-surface-card rounded-lg border border-border-theme">
+      <div className="forge-card p-5 md:p-6 max-w-xs md:max-w-sm mx-auto">
         <div className="flex flex-col items-center">
           <img
             src={member.image}
@@ -240,7 +240,7 @@ const LandingPage = () => {
         </section>
 
         {/* Featured At Section */}
-        <section className="py-8 md:py-10 px-2 md:px-6 bg-surface border-y border-border-theme">
+        <section className="py-8 md:py-10 px-2 md:px-6 border-y border-border-theme">
           <div className="max-w-4xl mx-auto">
             <p className="text-center text-muted text-sm font-mono tracking-widest uppercase mb-6">{siteContent.featuredAt.title}</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
@@ -266,16 +266,16 @@ const LandingPage = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-12 md:py-16 px-2 md:px-6 bg-surface relative overflow-hidden">
+        <section id="services" className="py-12 md:py-16 px-2 md:px-6 relative overflow-hidden">
           <BackgroundPattern variant="dots" opacity={0.03} className="text-primary" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+            <h2 className="forge-h2">
               {siteContent.services.title}
             </h2>
-            <p className="text-center text-body mb-8 max-w-2xl mx-auto">{siteContent.services.subtitle}</p>
+            <p className="forge-sub">{siteContent.services.subtitle}</p>
             <ul className="grid md:grid-cols-3 gap-6 md:gap-8 list-none">
               {siteContent.services.items.map((service, index) => (
-                <li key={index} className="p-6 hover:shadow-2xl transition-all duration-300 rounded-md border border-border-theme border-l-[3px] border-l-primary flex flex-col bg-surface-card hover:-translate-y-1 group">
+                <li key={index} className="p-6 hover:shadow-2xl transition-all duration-300 forge-card flex flex-col bg-surface-card hover:-translate-y-1 group">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-mono text-xs font-bold text-primary tracking-wider">
                       {String(index + 1).padStart(2, '0')}
@@ -293,25 +293,25 @@ const LandingPage = () => {
               ))}
             </ul>
             <div className="text-center mt-8">
-              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.services.ctaPrimary}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">{siteContent.services.ctaPrimary}</a>
             </div>
           </div>
         </section>
 
         {/* Litmus Methodology Section */}
-        <section id="methodology" className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
+        <section id="methodology" className="py-12 md:py-16 px-2 md:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+            <h2 className="forge-h2">
               {siteContent.litmus.title}
             </h2>
-            <p className="text-center text-body mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="forge-sub">
               {siteContent.litmus.subtitle}
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {siteContent.litmus.dimensions.map((dim, index) => (
                 <div
                   key={index}
-                  className="bg-surface-elevated rounded-md border border-border-theme border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform"
+                  className="bg-surface-elevated forge-card p-5 hover:-translate-y-0.5 transition-transform"
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <span className="font-mono text-xs font-bold text-primary tracking-wider">
@@ -332,60 +332,60 @@ const LandingPage = () => {
         </section>
 
         {/* Team Section */}
-        <section id="about" className="py-12 md:py-16 px-2 md:px-6 bg-gradient-to-br from-primary to-primary-dark">
+        <section id="about" className="py-12 md:py-16 px-2 md:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white">
+            <h2 className="forge-h2">
               {siteContent.team.title}
             </h2>
-            <p className="text-center text-white/90 mb-10 max-w-2xl mx-auto">{siteContent.team.subtitle}</p>
+            <p className="forge-sub">{siteContent.team.subtitle}</p>
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
               <TeamMemberCard />
             </div>
             <div className="text-center mt-8">
-              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-surface text-primary hover:bg-surface-subtle px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.team.cta}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">{siteContent.team.cta}</a>
             </div>
           </div>
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-12 md:py-16 px-2 md:px-6 bg-secondary relative overflow-hidden">
-          <BackgroundPattern variant="grid" opacity={0.05} className="text-white" />
+        <section className="py-12 md:py-16 px-2 md:px-6 relative overflow-hidden">
+          <BackgroundPattern variant="grid" opacity={0.04} className="text-primary" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-white">
+            <h2 className="forge-h2">
               {siteContent.whyChooseUs.title}
             </h2>
-            <p className="text-center text-primary-light mb-10 max-w-2xl mx-auto">{siteContent.whyChooseUs.subtitle}</p>
+            <p className="forge-sub">{siteContent.whyChooseUs.subtitle}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {siteContent.whyChooseUs.items.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-secondary-light/50 rounded-md border border-white/10 border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform"
+                  className="forge-card p-5"
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <span className="font-mono text-xs font-bold text-primary tracking-wider">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="font-display font-bold text-white uppercase tracking-wide text-sm">
+                    <h3 className="font-display font-bold text-heading uppercase tracking-wide text-sm">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-primary-light/80 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-body text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
             <div className="text-center mt-10">
-              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-6 py-3 rounded-lg text-base font-semibold transition-all inline-block hover:shadow-lg hover:scale-105">{siteContent.whyChooseUs.cta}</a>
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">{siteContent.whyChooseUs.cta}</a>
             </div>
           </div>
         </section>
 
         {/* Recent Work Section */}
-        <section className="py-12 md:py-16 px-2 md:px-6 bg-surface">
+        <section className="py-12 md:py-16 px-2 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+            <h2 className="forge-h2">
               {siteContent.recentWork.title}
             </h2>
-            <p className="text-center text-body mb-10 max-w-2xl mx-auto">{siteContent.recentWork.subtitle}</p>
+            <p className="forge-sub">{siteContent.recentWork.subtitle}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {siteContent.recentWork.items.map((item, index) => {
                 const CardWrapper = item.link ? 'a' : 'div';
@@ -396,7 +396,7 @@ const LandingPage = () => {
                   <CardWrapper
                     key={index}
                     {...wrapperProps}
-                    className="bg-surface-card rounded-md border border-border-theme border-l-[3px] border-l-primary p-5 hover:-translate-y-0.5 transition-transform flex flex-col group"
+                    className="bg-surface-card forge-card p-5 hover:-translate-y-0.5 transition-transform flex flex-col group"
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <span
@@ -433,15 +433,15 @@ const LandingPage = () => {
         </section>
 
         {/* News Section */}
-        <section id="news" className="py-12 md:py-16 px-2 md:px-6 bg-surface-subtle">
+        <section id="news" className="py-12 md:py-16 px-2 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] text-center mb-4 text-heading">
+            <h2 className="forge-h2">
               {siteContent.news.title}
             </h2>
-            <p className="text-center text-body mb-8 max-w-2xl mx-auto">{siteContent.news.subtitle}</p>
+            <p className="forge-sub">{siteContent.news.subtitle}</p>
             <div className="flex flex-col items-center gap-6">
               {siteContent.news.items.map((newsItem, index) => (
-                <div key={index} className="w-full bg-surface-elevated rounded-lg shadow p-6 flex flex-col md:flex-row items-center gap-6 border border-border-theme">
+                <div key={index} className="forge-card w-full p-6 flex flex-col md:flex-row items-center gap-6">
                   <div className="flex-shrink-0">
                     <img src={newsItem.image} alt={`${newsItem.title} logo`} loading="lazy" className="w-20 h-20 rounded-full object-cover border border-border-theme" />
                   </div>
@@ -469,27 +469,27 @@ const LandingPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-16 px-2 md:px-6 bg-secondary">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold uppercase tracking-[1.5px] mb-6 text-white">
+        <section id="contact" className="py-12 md:py-16 px-2 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="forge-h2">
               {siteContent.contact.title}
             </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="forge-sub text-lg" style={{ maxWidth: '60ch' }}>
               {siteContent.contact.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-primary text-white hover:bg-primary-dark px-6 py-3 rounded-lg text-lg font-bold transition-all inline-block shadow-lg hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-5 sm:items-center">
+              <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="forge-btn">
                 {siteContent.contact.cta}
               </a>
-              <a href={`mailto:${siteContent.contact.email}`} className="text-white/80 hover:text-white transition-colors text-sm font-mono">
+              <a href={`mailto:${siteContent.contact.email}`} className="text-muted hover:text-primary transition-colors text-sm font-mono">
                 or email {siteContent.contact.email}
               </a>
             </div>
-            <p className="text-white/60 font-mono text-xs tracking-wider mt-3 uppercase">
+            <p className="text-muted font-mono text-xs tracking-wider mt-3 uppercase">
               30 min &middot; no obligation
             </p>
             <div className="mt-4">
-              <a href={siteContent.company.phoneHref} className="text-white/80 hover:text-white transition-colors text-sm font-mono">
+              <a href={siteContent.company.phoneHref} className="text-muted hover:text-primary transition-colors text-sm font-mono">
                 or call {siteContent.company.phone}
               </a>
             </div>
@@ -497,7 +497,7 @@ const LandingPage = () => {
         </section>
 
         {/* Footer */}
-        <footer className="bg-surface border-t border-border-theme text-heading py-8 md:py-10 px-4 md:px-8">
+        <footer className="border-t border-border-theme text-heading py-8 md:py-10 px-4 md:px-8">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold text-heading mb-4 font-display uppercase tracking-[2px]">{siteContent.company.name}</h2>
