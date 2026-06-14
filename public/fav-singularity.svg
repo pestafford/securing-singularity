@@ -1,10 +1,12 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="32" cy="32" r="30" fill="#000" stroke="#1EAEDB" stroke-width="4"/>
-  <circle cx="32" cy="32" r="16" fill="url(#radial)"/>
+  <!-- Singularity Systems favicon — Forge palette (Teal Anvil) -->
+  <circle cx="32" cy="32" r="30" fill="#1A1D1B" stroke="#2A9D8F" stroke-width="4"/>
+  <circle cx="32" cy="32" r="17" fill="url(#forgeRadial)"/>
   <defs>
-    <radialGradient id="radial" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
-      <stop offset="0%" stop-color="#1EAEDB" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="1"/>
+    <radialGradient id="forgeRadial" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#7FE6D8"/>
+      <stop offset="48%" stop-color="#2A9D8F"/>
+      <stop offset="100%" stop-color="#1A1D1B"/>
     </radialGradient>
   </defs>
 </svg>

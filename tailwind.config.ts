@@ -9,29 +9,29 @@ export default {
 		extend: {
 			colors: {
 				primary: {
-					DEFAULT: '#2A9D8F',
-					dark: '#237B71',
-					light: '#3AB5A5',
+					DEFAULT: '#15D7C2',
+					dark: '#0FA796',
+					light: '#4FE2D2',
 				},
 				secondary: {
-					DEFAULT: '#1A1D1B',
-					light: '#232724',
+					DEFAULT: '#0E1318',
+					light: '#161C21',
 				},
 				accent: {
-					teal: '#2A9D8F',
-					warm: '#C4956A',
+					teal: '#15D7C2',
+					warm: '#D9A34A',
 				},
 				dark: {
-					DEFAULT: '#1A1D1B',
-					card: '#232724',
-					hover: '#353a37',
-					border: 'rgba(134, 131, 120, 0.15)',
-					subtle: '#232724',
+					DEFAULT: '#0E1318',
+					card: '#161C21',
+					hover: '#283038',
+					border: 'rgba(139, 132, 116, 0.15)',
+					subtle: '#161C21',
 				},
 				text: {
-					primary: '#E0DDD4',
-					secondary: '#868378',
-					muted: '#5a5750',
+					primary: '#E8E3D8',
+					secondary: '#8B8474',
+					muted: '#6E685C',
 				},
 				surface: {
 					DEFAULT: 'var(--color-bg)',

@@ -11,47 +11,47 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Light mode — Bone & Char */
-  --color-bg: #F2EDE5;
-  --color-bg-card: #FAF7F2;
-  --color-bg-subtle: #FAF7F2;
+  /* Light mode — Bone & Char (v2) */
+  --color-bg: #F4F1E8;
+  --color-bg-card: #FBF8F2;
+  --color-bg-subtle: #FBF8F2;
   --color-bg-elevated: #FFFFFF;
-  --color-border: rgba(107, 102, 94, 0.15);
-  --color-border-hover: rgba(107, 102, 94, 0.30);
-  --color-text-primary: #1E1E1C;
-  --color-text-secondary: #5A554E;
-  --color-text-muted: #7A756E;
-  --color-accent: #2A7A6E;
-  --color-accent2: #8B5E3C;
+  --color-border: rgba(121, 111, 96, 0.15);
+  --color-border-hover: rgba(121, 111, 96, 0.30);
+  --color-text-primary: #171511;
+  --color-text-secondary: #4D473D;
+  --color-text-muted: #796F60;
+  --color-accent: #0F9788;
+  --color-accent2: #B5873E;
 }
 
 .dark {
-  /* Dark mode — Teal Anvil */
-  --color-bg: #121413;
-  --color-bg-card: #1A1D1B;
-  --color-bg-subtle: #1A1D1B;
-  --color-bg-elevated: #232724;
-  --color-border: rgba(134, 131, 120, 0.20);
-  --color-border-hover: rgba(134, 131, 120, 0.35);
-  --color-text-primary: #E0DDD4;
-  --color-text-secondary: #B8B4AA;
-  --color-text-muted: #9A968D;
-  --color-accent: #2A9D8F;
-  --color-accent2: #C4956A;
+  /* Dark mode — Aqua Anvil (v2) */
+  --color-bg: #0E1318;
+  --color-bg-card: #161C21;
+  --color-bg-subtle: #161C21;
+  --color-bg-elevated: #1E252B;
+  --color-border: rgba(139, 132, 116, 0.20);
+  --color-border-hover: rgba(139, 132, 116, 0.35);
+  --color-text-primary: #E8E3D8;
+  --color-text-secondary: #C3BCAE;
+  --color-text-muted: #8B8474;
+  --color-accent: #15D7C2;
+  --color-accent2: #D9A34A;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   background-image:
-    linear-gradient(var(--color-accent-grid, rgba(42, 157, 143, 0.06)) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-accent-grid, rgba(42, 157, 143, 0.06)) 1px, transparent 1px);
+    linear-gradient(var(--color-accent-grid, rgba(15, 151, 136, 0.06)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-accent-grid, rgba(15, 151, 136, 0.06)) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 .dark body,
 body:is(.dark *) {
-  --color-accent-grid: rgba(42, 157, 143, 0.10);
+  --color-accent-grid: rgba(21, 215, 194, 0.10);
 }
 
 /* Smooth scroll behavior */
