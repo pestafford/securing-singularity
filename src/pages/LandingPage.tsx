@@ -240,7 +240,7 @@ const LandingPage = () => {
         </section>
 
         {/* Featured At Section */}
-        <section className="py-8 md:py-10 px-2 md:px-6 border-y border-border-theme">
+        <section className="py-10 md:py-14 px-4 md:px-8 border-y border-border-theme">
           <div className="max-w-4xl mx-auto">
             <p className="text-center text-muted text-sm font-mono tracking-widest uppercase mb-6">{siteContent.featuredAt.title}</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
@@ -266,12 +266,13 @@ const LandingPage = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-12 md:py-16 px-2 md:px-6 relative overflow-hidden">
+        <section id="services" className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
           <BackgroundPattern variant="dots" opacity={0.03} className="text-primary" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="forge-h2">
-              {siteContent.services.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.services.title}</h2>
+              <span className="sl">01 &middot; Capabilities</span>
+            </div>
             <p className="forge-sub">{siteContent.services.subtitle}</p>
             <ul className="grid md:grid-cols-3 gap-6 md:gap-8 list-none">
               {siteContent.services.items.map((service, index) => (
@@ -299,11 +300,12 @@ const LandingPage = () => {
         </section>
 
         {/* Litmus Methodology Section */}
-        <section id="methodology" className="py-12 md:py-16 px-2 md:px-6">
+        <section id="methodology" className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="forge-h2">
-              {siteContent.litmus.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.litmus.title}</h2>
+              <span className="sl">02 &middot; Litmus</span>
+            </div>
             <p className="forge-sub">
               {siteContent.litmus.subtitle}
             </p>
@@ -332,11 +334,12 @@ const LandingPage = () => {
         </section>
 
         {/* Team Section */}
-        <section id="about" className="py-12 md:py-16 px-2 md:px-6">
+        <section id="about" className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="forge-h2">
-              {siteContent.team.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.team.title}</h2>
+              <span className="sl">03 &middot; Leadership</span>
+            </div>
             <p className="forge-sub">{siteContent.team.subtitle}</p>
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
               <TeamMemberCard />
@@ -348,12 +351,13 @@ const LandingPage = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-12 md:py-16 px-2 md:px-6 relative overflow-hidden">
+        <section className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
           <BackgroundPattern variant="grid" opacity={0.04} className="text-primary" />
           <div className="max-w-6xl mx-auto relative z-10">
-            <h2 className="forge-h2">
-              {siteContent.whyChooseUs.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.whyChooseUs.title}</h2>
+              <span className="sl">04 &middot; Why Us</span>
+            </div>
             <p className="forge-sub">{siteContent.whyChooseUs.subtitle}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {siteContent.whyChooseUs.items.map((item, index) => (
@@ -380,11 +384,12 @@ const LandingPage = () => {
         </section>
 
         {/* Recent Work Section */}
-        <section className="py-12 md:py-16 px-2 md:px-6">
+        <section className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="forge-h2">
-              {siteContent.recentWork.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.recentWork.title}</h2>
+              <span className="sl">05 &middot; Work</span>
+            </div>
             <p className="forge-sub">{siteContent.recentWork.subtitle}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {siteContent.recentWork.items.map((item, index) => {
@@ -433,11 +438,12 @@ const LandingPage = () => {
         </section>
 
         {/* News Section */}
-        <section id="news" className="py-12 md:py-16 px-2 md:px-6">
+        <section id="news" className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="forge-h2">
-              {siteContent.news.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.news.title}</h2>
+              <span className="sl">06 &middot; Dispatches</span>
+            </div>
             <p className="forge-sub">{siteContent.news.subtitle}</p>
             <div className="flex flex-col items-center gap-6">
               {siteContent.news.items.map((newsItem, index) => (
@@ -469,11 +475,12 @@ const LandingPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-16 px-2 md:px-6">
+        <section id="contact" className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="forge-h2">
-              {siteContent.contact.title}
-            </h2>
+            <div className="forge-sec-h">
+              <h2 className="forge-h2">{siteContent.contact.title}</h2>
+              <span className="sl">Book &middot; 30 min</span>
+            </div>
             <p className="forge-sub text-lg" style={{ maxWidth: '60ch' }}>
               {siteContent.contact.subtitle}
             </p>

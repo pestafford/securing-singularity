@@ -226,9 +226,13 @@ html {
 /* machined card — chamfer + accent spine + corner tick (theme-aware) */
 .forge-card{position:relative;background:var(--color-bg-card);border:1px solid var(--color-border);border-left:3px solid var(--color-accent);
   clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);transition:transform .15s}
-.forge-card:hover{transform:translateY(-2px)}
-.forge-card::after{content:"";position:absolute;bottom:9px;right:9px;width:9px;height:9px;border:1.5px solid var(--color-accent);opacity:.4;border-left:0;border-top:0;pointer-events:none}
+.forge-card:hover{transform:translateY(-3px)}
+.forge-card::after{content:"";position:absolute;bottom:9px;right:9px;width:9px;height:9px;border:1.5px solid var(--color-accent);opacity:.38;border-left:0;border-top:0;pointer-events:none;transition:opacity .15s,width .15s,height .15s}
+.forge-card:hover::after{opacity:.95;width:12px;height:12px}
 /* editorial section heading — left, with a solid rule */
 .forge-h2{font-family:'Josefin Sans',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.05;text-align:left;
-  font-size:clamp(22px,3.2vw,32px);color:var(--color-text-primary);border-bottom:2px solid var(--color-text-primary);padding-bottom:12px;margin-bottom:16px}
+  font-size:clamp(22px,3.2vw,32px);color:var(--color-text-primary);margin:0}
+.forge-sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  border-bottom:2px solid var(--color-text-primary);padding-bottom:12px;margin-bottom:20px}
+.forge-sec-h .sl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-muted);white-space:nowrap}
 .forge-sub{color:var(--color-text-secondary);max-width:60ch;margin-bottom:30px;font-size:15.5px;line-height:1.6;text-align:left}
