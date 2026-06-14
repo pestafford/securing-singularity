@@ -186,7 +186,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-surface relative">
+    <div className="min-h-screen relative">
       <div className="relative z-10">
         <Banner />
 
