@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Coding Standards
+
+Follow the canonical **Engineering Style Guide** — `singularity-ops/style-guide/coding-standards.md` (the AI-code-slop catalog plus Python / TypeScript / agent-code rules). Its essentials are baked into the global `~/.claude/CLAUDE.md` §2 and load every session. The project-specific guidance in this file **layers on top** of that baseline; where they conflict, the stricter rule wins.
+
 ## Project Overview
 
 This is a React + TypeScript marketing/landing page for Singularity Systems, a cybersecurity consulting firm specializing in AI security, GRC solutions, and fractional CISO services. The site is a single-page application built with Vite and styled with Tailwind CSS.
