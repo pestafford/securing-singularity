@@ -185,10 +185,8 @@ html {
 .forge-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-muted);display:inline-flex;align-items:center;gap:10px}
 .forge-eyebrow .dot{color:var(--color-accent)}
 
-/* accent highlight with a solid amber chamfered underline (the "Probably." device) */
-.hl{color:var(--color-accent);position:relative;display:inline-block}
-.hl::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.085em;background:var(--color-accent2);
-  clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+/* stakes-headline highlight — amber ink, no underline (the color alone carries the hit) */
+.hl{color:var(--color-accent2)}
 
 /* primary CTA — solid knockout chamfer (text = base color punched out of the accent fill) */
 .forge-btn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;

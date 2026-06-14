@@ -201,7 +201,7 @@ const LandingPage = () => {
               <div>
                 <p className="forge-eyebrow mb-6"><span className="dot">&#9670;</span> {siteContent.valueProp.headline}</p>
                 <h1 className="font-display font-bold uppercase tracking-[-0.5px] leading-[0.95] text-heading text-4xl sm:text-5xl md:text-5xl lg:text-6xl mb-6">
-                  Can you trust<br />your agents <span className="hl">in production?</span>
+                  Find out before<br /><span className="hl">something else does.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-body mb-8 leading-relaxed max-w-xl">
                   {siteContent.hero.subtitle}
